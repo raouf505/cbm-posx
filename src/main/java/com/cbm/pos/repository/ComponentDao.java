@@ -1,4 +1,4 @@
-package com.cbm.pos.dao;
+package com.cbm.pos.repository;
 
 public class ComponentDao {
 
