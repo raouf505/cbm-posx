@@ -81,11 +81,11 @@
 <!-- 			<version>${hibernate-version}</version> -->
 <!-- 		</dependency> -->
 		
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.hibernate.common</groupId> -->
-<!-- 			<artifactId>hibernate-commons-annotations</artifactId> -->
-<!-- 			<version>4.0.1.Final</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
 				
 		<!-- AspectJ -->
 		<dependency>
