@@ -1,8 +1,24 @@
 package com.cbm.pos.domain;
 
-public class Component {
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+
+@Entity
+@Table(name = "COMPONENT")
+public class Component implements Serializable {
 	
+	private static final long serialVersionUID = -5527566248002296042L;
+	
+	@Id
+	@Column(name = "ID")
+	@GeneratedValue
 	private int Id;
+	
+	@Column(name = "NAME")
 	private String name;
 	
 	public int getId() {
