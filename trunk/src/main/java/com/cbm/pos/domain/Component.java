@@ -15,7 +15,7 @@ public class Component implements Serializable {
 	
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue
+//	@GeneratedValue
 	private int Id;
 	
 	@Column(name = "NAME")
