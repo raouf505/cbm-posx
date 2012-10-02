@@ -4,7 +4,7 @@ import com.cbm.pos.domain.Component;
 
 public interface ComponentDao {
 	
-	void add(Component component);
+	void add();
 	
 	boolean delete(Component component);
 	
