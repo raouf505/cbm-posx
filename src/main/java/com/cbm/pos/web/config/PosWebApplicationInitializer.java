@@ -7,6 +7,7 @@ import javax.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
 public class PosWebApplicationInitializer implements WebApplicationInitializer {
 
@@ -17,7 +18,9 @@ public class PosWebApplicationInitializer implements WebApplicationInitializer {
 
 	private void registerDispatcherServlet(final ServletContext servletContext) {
 		//WebApplicationContext dispatcherContext = createContext(Webmvccontextconfiguration)
-		ServletRegistration.Dynamic dispatcher;
+		ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher", DispatcherServlet.class);
+		registration.addMapping("/*");
+		registration.setLoadOnStartup(1);
 	}
 	
 	private WebApplicationContext createContext(final Class<?>... annotatedClasses) {
