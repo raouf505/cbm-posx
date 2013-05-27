@@ -17,8 +17,9 @@ public class PosWebApplicationInitializer implements WebApplicationInitializer {
 	}
 
 	private void registerDispatcherServlet(final ServletContext servletContext) {
-		//WebApplicationContext dispatcherContext = createContext(Webmvccontextconfiguration)
-		ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher", DispatcherServlet.class);
+		WebApplicationContext dispatcherContext = createContext(WebMvcContextConfiguration.class);
+		DispatcherServlet dispatcherServlet = new DispatcherServlet(dispatcherContext); 
+		ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher", dispatcherServlet);
 		registration.addMapping("/*");
 		registration.setLoadOnStartup(1);
 	}
@@ -26,6 +27,7 @@ public class PosWebApplicationInitializer implements WebApplicationInitializer {
 	private WebApplicationContext createContext(final Class<?>... annotatedClasses) {
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
 		context.register(annotatedClasses);
+		//context.getEnvironment().setActiveProfiles("local);
 		return context;
 	}
 }
