@@ -8,6 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.cbm.pos" })
-public class ApplicationContextConfiguration extends WebMvcConfigurerAdapter {
+public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
 	
 }
