@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/" reloadable="true" debug="0" override="true">
-	<ResourceLink global="jdbc/pos" name="jdbc/pos" type="javax.sql.Datasource"/>
+	<ResourceLink global="jdbc/posx" name="jdbc/posx" type="javax.sql.Datasource"/>
 </Context>

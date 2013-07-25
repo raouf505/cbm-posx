@@ -6,7 +6,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<bean name="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/jdbc/pos" />
+		<property name="jndiName" value="java:comp/env/jdbc/posx" />
 	</bean>
 	
 	<bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
