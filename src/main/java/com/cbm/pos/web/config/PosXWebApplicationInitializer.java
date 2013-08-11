@@ -1,4 +1,4 @@
-package com.cbm.pos.config;
+package com.cbm.pos.web.config;
 
 import java.util.EnumSet;
 
@@ -14,10 +14,6 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.apress.prospringmvc.bookstore.config.InfrastructureContextConfiguration;
-import com.apress.prospringmvc.bookstore.config.TestDataContextConfiguration;
-import com.apress.prospringmvc.bookstore.web.config.WebMvcContextConfiguration;
-
 public class PosXWebApplicationInitializer implements WebApplicationInitializer {
 
 	private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
@@ -26,8 +22,6 @@ public class PosXWebApplicationInitializer implements WebApplicationInitializer 
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		registerListener(servletContext);
 		registerDispatcherServlet(servletContext);
-		registerOpenEntityManagerInViewFilter(servletContext);
-
 	}
 
 	private void registerDispatcherServlet(ServletContext servletContext) {
@@ -39,16 +33,8 @@ public class PosXWebApplicationInitializer implements WebApplicationInitializer 
 	}
 
 	private void registerListener(ServletContext servletContext) {
-		AnnotationConfigWebApplicationContext rootContext = createContext(InfrastructureContextConfiguration.class,
-				TestDataContextConfiguration.class);
+		AnnotationConfigWebApplicationContext rootContext = createContext(InfrastructureContextConfiguration.class);
 		servletContext.addListener(new ContextLoaderListener(rootContext));
-	}
-
-	private void registerOpenEntityManagerInViewFilter(ServletContext servletContext) {
-		FilterRegistration.Dynamic registration = servletContext.addFilter("openEntityManagerInView",
-				new OpenEntityManagerInViewFilter());
-		registration.addMappingForServletNames(EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD), true,
-				DISPATCHER_SERVLET_NAME);
 	}
 
 	/**
@@ -60,5 +46,4 @@ public class PosXWebApplicationInitializer implements WebApplicationInitializer 
 		return context;
 	}
 	
-
 }

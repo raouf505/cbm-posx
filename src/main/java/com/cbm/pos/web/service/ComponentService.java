@@ -1,6 +1,6 @@
-package com.cbm.pos.service;
+package com.cbm.pos.web.service;
 
-import com.cbm.pos.domain.Component;
+import com.cbm.pos.web.domain.Component;
 
 public interface ComponentService {
 	Component searchBySize(int id);

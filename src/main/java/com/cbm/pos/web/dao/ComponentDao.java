@@ -1,6 +1,6 @@
-package com.cbm.pos.dao;
+package com.cbm.pos.web.dao;
 
-import com.cbm.pos.domain.Component;
+import com.cbm.pos.web.domain.Component;
 
 public interface ComponentDao {
 	
