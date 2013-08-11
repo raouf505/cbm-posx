@@ -1,4 +1,4 @@
-package com.cbm.pos.web;
+package com.cbm.pos.web.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.cbm.pos.dao.ComponentDao;
+import com.cbm.pos.web.dao.ComponentDao;
 
 
 @Controller

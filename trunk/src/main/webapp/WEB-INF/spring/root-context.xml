@@ -20,7 +20,7 @@
 		</property>
 		<property name="annotatedClasses">
      		<list>
-       			<value>com.cbm.pos.domain.Component</value>
+       			<value>com.cbm.pos.web.domain.Component</value>
      		</list>
    		</property>
 	</bean>

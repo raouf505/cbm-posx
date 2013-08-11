@@ -1,11 +1,11 @@
-package com.cbm.pos.dao;
+package com.cbm.pos.web.dao;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cbm.pos.domain.Component;
+import com.cbm.pos.web.domain.Component;
 
 @Repository
 public class ComponentDaoImp implements ComponentDao {

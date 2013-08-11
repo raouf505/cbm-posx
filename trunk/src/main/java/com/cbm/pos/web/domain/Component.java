@@ -1,4 +1,4 @@
-package com.cbm.pos.domain;
+package com.cbm.pos.web.domain;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
