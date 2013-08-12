@@ -18,11 +18,7 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
-		<property name="annotatedClasses">
-     		<list>
-       			<value>com.cbm.pos.web.domain.Component</value>
-     		</list>
-   		</property>
+   		<property name="packagesToScan" value="com.cbm.pos.web.domain" />
 	</bean>
 	
 	<bean name="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
