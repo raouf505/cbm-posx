@@ -7,13 +7,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cbm.pos.web.domain.Component;
 
+@Transactional
 @Repository
 public class ComponentDaoImp implements ComponentDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	@Transactional
+	
 	public void add() {
 		Component component = new Component();
 		component.setId(1);
