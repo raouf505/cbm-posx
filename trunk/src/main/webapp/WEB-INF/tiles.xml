@@ -10,4 +10,10 @@
 		<put-attribute name="header" value="/WEB-INF/jsp/templates/common/header.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/jsp/templates/common/footer.jsp" />
 	</definition>
+	
+	<definition name="showTables" template="/WEB-INF/jsp/templates/common/mainTemplate.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/templates/common/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/templates/common/footer.jsp" />
+	</definition>
+	
 </tiles-definitions>
