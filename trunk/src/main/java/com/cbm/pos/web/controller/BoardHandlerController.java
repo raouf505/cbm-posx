@@ -8,20 +8,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/mesas")
-public class TableHandlerController {
+@RequestMapping(value = "/boards")
+public class BoardHandlerController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Value("${test}")
 	private String prop1;
 	
-	@RequestMapping(value = "/agregar")
+	@RequestMapping(value = "/add")
 	public String add() {
 		return "";
 	}
 	
-	@RequestMapping(value = "/mostrar")
+	@RequestMapping(value = "/show")
 	public String show(Model model) {
 		logger.info("Show Tables Handler...");
 		
