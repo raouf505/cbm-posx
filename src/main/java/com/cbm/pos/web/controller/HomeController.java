@@ -19,15 +19,15 @@ public class HomeController {
 	@Autowired
 	private ComponentDao componentDao;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
-		logger.info("Home controller");
-		
-		//model.addAttribute("serverTime", formattedDate );
-		
-		componentDao.add();
-		
-		return "home";
-	}
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
+//	public String home(Model model) {
+//		logger.info("Home controller");
+//		
+//		//model.addAttribute("serverTime", formattedDate );
+//		
+//		//componentDao.add();
+//		
+//		return "home";
+//	}
 	
 }
