@@ -1,13 +1,20 @@
 package com.cbm.pos.web.dao;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.cbm.pos.web.domain.InventoryItem;
 
+@Repository
 public class InventoryItemDaoImp implements InventoryItemDao {
 
+	@Autowired
+	private SessionFactory sessionFactory;
+	
 	@Override
-	public void add() {
-		// TODO Auto-generated method stub
-		
+	public void add(InventoryItem inventoryItem) {
+		sessionFactory.getCurrentSession().save(inventoryItem);
 	}
 
 	@Override

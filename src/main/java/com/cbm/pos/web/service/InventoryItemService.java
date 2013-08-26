@@ -6,6 +6,6 @@ public interface InventoryItemService {
 	
 	InventoryItem searchBySize(int id);
 	
-	InventoryItem add(InventoryItem inventoryItem);
+	void add(InventoryItem inventoryItem);
 	
 }

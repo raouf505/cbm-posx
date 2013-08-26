@@ -4,7 +4,7 @@ import com.cbm.pos.web.domain.InventoryItem;
 
 public interface InventoryItemDao {
 
-	void add();
+	void add(InventoryItem inventoryItem);
 	
 	boolean delete(InventoryItem inventoryItem);
 	
