@@ -1,7 +1,11 @@
 <%@ include file="/WEB-INF/jsp/common/taglibs.jsp"  %>
 
-<form:form method="GET" modelAttribute="inventoryItem">
+<form method="GET" action="/inventoryItems/add">
 	<fieldset>
-		<legend>Datos del item del inventario:</legend>
+		<legend>Información del artículo:</legend>
+		<input type="text" name="id" id="id" placeholder="ID">
+		<input type="text" name="name" id="name" placeholder="name">
+		<input type="text" name="quantity" id="quantity" placeholder="Cantidad inicial">
+		<input type="submit" value="Aceptar">
 	</fieldset>
-</form:form>
+</form>
