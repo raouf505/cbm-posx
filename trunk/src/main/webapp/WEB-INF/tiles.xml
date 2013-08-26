@@ -6,14 +6,22 @@
 <tiles-definitions>
 
 	<!-- templates -->
-	<definition name="home" template="/WEB-INF/jsp/templates/common/mainTemplate.jsp">
-		<put-attribute name="header" value="/WEB-INF/jsp/templates/common/header.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/jsp/templates/common/footer.jsp" />
+	
+	<definition name="mainTemplate" template="/WEB-INF/jsp/common/templates/mainTemplate.jsp">
+		<put-attribute name="styles" value="/WEB-INF/jsp/common/styles.jsp" />
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
 	</definition>
 	
-	<definition name="showTables" template="/WEB-INF/jsp/templates/common/mainTemplate.jsp">
-		<put-attribute name="header" value="/WEB-INF/jsp/templates/common/header.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/jsp/templates/common/footer.jsp" />
+	<!-- Inventory Items Tiles -->
+	
+	<definition name="/inventoryItems/show" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/inventoryItem/showInventoryItem.jsp" />
+		<put-list-attribute name="specificPageStylesList" cascade="true">
+			<add-attribute value="/resources/css/inventoryItem.css" />
+		</put-list-attribute>
 	</definition>
+	
+	<!-- End Inventory Items Tiles -->
 	
 </tiles-definitions>
