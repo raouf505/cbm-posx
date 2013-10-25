@@ -12,7 +12,7 @@ import com.cbm.pos.web.domain.InventoryItem;
 import com.cbm.pos.web.service.InventoryItemService;
 
 @Controller
-@RequestMapping(value = "/inventoryItems")
+@RequestMapping(value = "/inventory")
 public class InventoryItemController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(InventoryItemController.class);
@@ -29,7 +29,7 @@ public class InventoryItemController {
 		
 		inventoryItemService.add(inventoryItem);
 		
-		return "/inventoryItems/show";
+		return "/inventory/show";
 	}
 	
 	@RequestMapping(value = "/show")
@@ -41,7 +41,7 @@ public class InventoryItemController {
 		
 		model.addAttribute("prop1", this.prop1);
 		model.addAttribute("inventoryItem", inventoryItem);
-		return "/inventoryItems/show";
+		return "/inventory/show";
 	}
 	
 }

@@ -15,8 +15,8 @@
 	
 	<!-- Inventory Items Tiles -->
 	
-	<definition name="/inventoryItems/show" extends="mainTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/inventoryItem/showInventoryItem.jsp" />
+	<definition name="/inventory/show" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/inventory/showInventory.jsp" />
 		<put-list-attribute name="specificPageStylesList" cascade="true">
 			<add-attribute value="/resources/css/inventoryItem.css" />
 		</put-list-attribute>
