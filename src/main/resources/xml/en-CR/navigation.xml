@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigation xmlns="http://jibx.org/starter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance ../../../xsd/jibx/navigation.xsd">
+	
+	<link>
+		<id>inventory</id>
+		<text>Inventario</text>
+		<href>/inventory/show</href>
+	</link>
+	
+	<link>
+		<id>checkIn</id>
+		<text>Facturación</text>
+		<href>/checkIn</href>
+	</link>
+
+</navigation>

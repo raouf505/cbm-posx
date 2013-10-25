@@ -170,6 +170,18 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<!-- JiBX -->
+		<dependency>
+	  		<groupId>org.jibx</groupId>
+	  		<artifactId>jibx-run</artifactId>
+	  		<version>1.2.5</version>
+		</dependency>
+		<dependency>
+	  		<groupId>org.jibx</groupId>
+	  		<artifactId>jibx-extras</artifactId>
+	  		<version>1.2.5</version>
+		</dependency>
 	
 		<!-- Test -->
 		<dependency>
@@ -181,6 +193,28 @@
 	</dependencies>
     <build>
         <plugins>
+        	<plugin>
+		        <groupId>org.jibx</groupId>
+		        <artifactId>jibx-maven-plugin</artifactId>
+		        <version>1.2.5</version>
+		        <executions>
+		        	<execution>
+		                <id>generate-java-code-from-schema</id>
+		                <goals>
+		                    <goal>schema-codegen</goal>
+		                </goals>
+		                <configuration>
+		                    <schemaLocation>src/main/resources/xsd/jibx</schemaLocation>
+		                    <includeSchemas>
+		                        <includeSchema>navigation.xsd</includeSchema>
+		                    </includeSchemas>
+		                    <options>
+		                        <package>com.cbm.pos.jibx</package>
+		                    </options>
+		                </configuration>
+		            </execution>
+		        </executions>
+		    </plugin>
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.9</version>
