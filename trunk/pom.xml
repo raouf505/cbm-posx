@@ -48,6 +48,12 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
 		<!-- Apache Tiles -->
 
 		<dependency>
@@ -211,6 +217,19 @@
 		                    <options>
 		                        <package>com.cbm.pos.jibx</package>
 		                    </options>
+		                </configuration>
+		            </execution>
+		            <execution>
+		                <id>compile-binding</id>
+		                <goals>
+		                    <goal>bind</goal>
+		                </goals>
+		                <configuration>
+		                    <schemaBindingDirectory>target/generated-sources</schemaBindingDirectory>
+		                    <load>true</load>
+		                    <validate>true</validate>
+		                    <!--<verbose>true</verbose>-->
+		                    <verify>true</verify>
 		                </configuration>
 		            </execution>
 		        </executions>
