@@ -8,12 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.cbm.pos.jibx.Navigation;
 import com.cbm.pos.web.domain.InventoryItem;
 import com.cbm.pos.web.service.InventoryItemService;
 
 @Controller
 @RequestMapping(value = "/inventory")
-public class InventoryItemController {
+public class InventoryItemController extends CommonController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(InventoryItemController.class);
 	
@@ -38,6 +39,8 @@ public class InventoryItemController {
 		
 		InventoryItem inventoryItem = new InventoryItem();
 		inventoryItem.setName("Chris");
+		
+		Navigation nav = contentManagerService.getPageContent("test", Navigation.class);
 		
 		model.addAttribute("prop1", this.prop1);
 		model.addAttribute("inventoryItem", inventoryItem);
