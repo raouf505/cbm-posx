@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<navigation xmlns="http://jibx.org/starter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance ../../../xsd/jibx/navigation.xsd">
+<navigation id="testId" name="testName">
 	
 	<link>
 		<id>inventory</id>
