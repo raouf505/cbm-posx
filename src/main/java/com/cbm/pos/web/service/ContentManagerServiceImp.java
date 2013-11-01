@@ -4,43 +4,42 @@ import java.io.InputStream;
 
 import javax.xml.transform.stream.StreamSource;
 
-import org.jibx.runtime.BindingDirectory;
-import org.jibx.runtime.IBindingFactory;
-import org.jibx.runtime.IUnmarshallingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.oxm.jibx.JibxMarshaller;
+import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ContentManagerServiceImp implements ContentManagerService {
 
 	private static final Logger logger = LoggerFactory.getLogger(ContentManagerServiceImp.class);
-	private String CONTENT_FILES_PATH = "/xml/en-CR/navigation.xml";
+	// i.e. /xml/en_CR/navigation.xml
+	private String CONTENT_FILES_PATH = "/xml/%s/%s.xml";
 	
 	@Override
 	@SuppressWarnings("unchecked")
-	public <T> T getPageContent(String xmlId, Class<T> pageContentType) {
+	public <T> T getContent(String locale, String xmlId, Class<T> contentType) {
 		InputStream is = null;
 		T pageContent = null;
 		
-		logger.info("Loading page content xml...");
+		logger.info(String.format("Loading %s.xml file...", xmlId));
 		try {
-			is = this.getClass().getResourceAsStream(CONTENT_FILES_PATH);
+			is = this.getClass().getResourceAsStream(String.format(CONTENT_FILES_PATH, locale, xmlId));
+			if (is != null) {
+				logger.info("%s.xml file loaded successfully", xmlId);
+			} else {
+				logger.info("error loading %s.xml", xmlId);
+				return null;
+			}
 			
-			IBindingFactory jc = BindingDirectory.getFactory(pageContentType);
-			IUnmarshallingContext unmarshaller = jc.createUnmarshallingContext();
-			T message = (T)unmarshaller.unmarshalDocument( is, null);
+			Jaxb2Marshaller unmarshaller = new Jaxb2Marshaller();
+			unmarshaller.setClassesToBeBound(contentType);
+			pageContent = (T)unmarshaller.unmarshal(new StreamSource(is));
+			logger.info("%s.xml file loaded successfully", xmlId);
 			
-//			JibxMarshaller jibxMarshaller = new JibxMarshaller();
-//			jibxMarshaller.setTargetClass(pageContentType);
-//			jibxMarshaller.afterPropertiesSet();
-//			
-//			pageContent = (T)jibxMarshaller.unmarshal(new StreamSource(is));
-					
 		} catch (Exception e) {
+			logger.warn("error loading %s content", contentType);
 			logger.error(e.getMessage());
-			e.printStackTrace();
 		} finally {
 			if (is != null) {
 				try {
@@ -53,76 +52,5 @@ public class ContentManagerServiceImp implements ContentManagerService {
 		
 		return pageContent;
 	}
-	
-	
-
-//	@SuppressWarnings("unchecked")
-//	public <T extends ContentBase> T getContent(String contentId, Class<T> clazz) {
-//		Object content = cacheService.retrieve(CONTENT_CACHE_NAME, contentId);
-//
-//		if (content == null) {
-//			content = getContentBaseFromXml(contentId, clazz);
-//
-//			if (content == null) {
-//				if (log.isDebugEnabled()) {
-//					log.debug("cannot unmarshall content id = " + contentId);
-//				}
-//
-//				cacheService.store(CONTENT_CACHE_NAME, contentId, CONTENT_NOT_FOUND);
-//			} else {
-//				if (log.isDebugEnabled()) {
-//					log.debug("unmarshalled content id = " + contentId);
-//				}
-//
-//				cacheService.store(CONTENT_CACHE_NAME, contentId, content);
-//			}
-//		} else if (content.equals(CONTENT_NOT_FOUND)) {
-//			content = null;
-//		}
-//
-//		return (T) content;
-//	}
-//
-//	@SuppressWarnings("unchecked")
-//	private <T extends ContentBase> T getContentBaseFromXml(String contentId, Class<T> clazz) {
-//		InputStream is = null;
-//		T content = null;
-//
-//		try {
-//			if (log.isDebugEnabled()) {
-//				log.debug("getting content id = " + contentId);
-//			}
-//
-//			is = this.getClass().getResourceAsStream(XML_FILE_LOCATION + "/" + contentId + XML_FILE_EXTENSION);
-//
-//			// File not found.
-//			if (is == null) {
-//				return null;
-//			}
-//
-//			JibxMarshaller unmarshaller = new JibxMarshaller();
-//			unmarshaller.setTargetClass(clazz);
-//			unmarshaller.afterPropertiesSet();
-//
-//			ContentItem contentItem = (ContentItem) unmarshaller.unmarshal(new StreamSource(is));
-//			content = (T) contentItem.getContent();
-//		} catch (JiBXException e) {
-//			log.error(e);
-//		} catch (XmlMappingException e) {
-//			log.error(e);
-//		} catch (IOException e) {
-//			log.error(e);
-//		} finally {
-//			if (is != null) {
-//				try {
-//					is.close();
-//				} catch (Exception e) {
-//					log.error(e);
-//				}
-//			}
-//		}
-//
-//		return content;
-//	}
 	
 }
