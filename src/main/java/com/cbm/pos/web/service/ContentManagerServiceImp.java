@@ -26,19 +26,19 @@ public class ContentManagerServiceImp implements ContentManagerService {
 		try {
 			is = this.getClass().getResourceAsStream(String.format(CONTENT_FILES_PATH, locale, xmlId));
 			if (is != null) {
-				logger.info("%s.xml file loaded successfully", xmlId);
+				logger.info(String.format("%s.xml file loaded successfully", xmlId));
 			} else {
-				logger.info("error loading %s.xml", xmlId);
+				logger.warn(String.format("error loading %s.xml", xmlId));
 				return null;
 			}
 			
 			Jaxb2Marshaller unmarshaller = new Jaxb2Marshaller();
 			unmarshaller.setClassesToBeBound(contentType);
 			pageContent = (T)unmarshaller.unmarshal(new StreamSource(is));
-			logger.info("%s.xml file loaded successfully", xmlId);
+			logger.info(String.format("%s content loaded successfully", xmlId));
 			
 		} catch (Exception e) {
-			logger.warn("error loading %s content", contentType);
+			logger.warn(String.format("error loading %s content", xmlId));
 			logger.error(e.getMessage());
 		} finally {
 			if (is != null) {
