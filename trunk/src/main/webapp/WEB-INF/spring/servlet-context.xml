@@ -39,4 +39,8 @@
 		<beans:property name="definitions" value="/WEB-INF/tiles.xml"></beans:property>
 	</beans:bean>
 	
+	<mvc:interceptors>
+		<beans:bean class="com.cbm.pos.web.interceptor.ViewNameInModelInterceptor" />
+	</mvc:interceptors>
+	
 </beans:beans>
