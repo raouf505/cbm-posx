@@ -16,8 +16,14 @@
 	<script data-main="/resources/js/main" src="/resources/js/lib/require.js"></script>
 </head>
 <body id="${ viewName }">
+
 	<tiles:insertAttribute name="header" />
-	<tiles:insertAttribute name="content" />
+	
+	<div id="pageContent">
+		<tiles:insertAttribute name="content" />
+	</div>
+	
 	<tiles:insertAttribute name="footer" />
+	
 </body>
 </html>
