@@ -3,6 +3,7 @@
 <!-- Common Styles -->
 
 <link rel="stylesheet" type="text/css" href="/resources/css/common/reset.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common/header.css" />
 
 <!-- End Common Styles -->
 
