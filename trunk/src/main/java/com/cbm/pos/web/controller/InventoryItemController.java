@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cbm.pos.springxml.Navigation;
+import com.cbm.pos.content.PageContent;
 import com.cbm.pos.web.domain.InventoryItem;
 import com.cbm.pos.web.service.InventoryItemService;
 
@@ -36,17 +36,11 @@ public class InventoryItemController extends CommonController {
 	}
 	
 	@RequestMapping(value = "/show")
-	public String show(Model model, Locale locale) {
-		logger.info("Show handler triggered");
+	public String show(Locale locale, Model model) {
+		logger.info("Show Inventory request handler triggered");
+		model.addAttribute("pageContent", contentManagerService.getContent(locale.toString(), "showInventoryPage", PageContent.class));
 		
-		InventoryItem inventoryItem = new InventoryItem();
-		inventoryItem.setName("Chris");
-		
-		Navigation nav = contentManagerService.getContent(locale.toString(), "navigatio", Navigation.class);
-		
-		model.addAttribute("prop1", this.prop1);
-		model.addAttribute("inventoryItem", inventoryItem);
-		return "/inventory/show";
+		return "showInventory";
 	}
 	
 }

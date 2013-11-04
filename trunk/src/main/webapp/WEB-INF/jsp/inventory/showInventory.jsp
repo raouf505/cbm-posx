@@ -1,5 +1,7 @@
 <%@ include file="/WEB-INF/jsp/common/taglibs.jsp"  %>
 
+<h1>${ pageContent.title }</h1>
+
 <form method="GET" action="/inventoryItems/add">
 	<fieldset>
 		<legend>Información del artículo:</legend>
