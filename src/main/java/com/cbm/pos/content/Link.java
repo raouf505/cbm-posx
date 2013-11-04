@@ -1,4 +1,4 @@
-package com.cbm.pos.springxml;
+package com.cbm.pos.content;
 
 import javax.xml.bind.annotation.XmlElement;
 

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.cbm.pos.springxml.Navigation;
+import com.cbm.pos.content.Navigation;
 import com.cbm.pos.web.service.ContentManagerService;
 
 public class CommonController {
