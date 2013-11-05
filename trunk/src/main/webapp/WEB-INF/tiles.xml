@@ -17,8 +17,9 @@
 	
 	<definition name="showInventory" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/jsp/inventory/showInventory.jsp" />
+		<put-attribute name="backboneApp" value="showInventoryApp" />
 		<put-list-attribute name="specificPageStylesList" cascade="true">
-			<add-attribute value="/resources/css/inventoryItem.css" />
+			<add-attribute value="inventory" />
 		</put-list-attribute>
 	</definition>
 	

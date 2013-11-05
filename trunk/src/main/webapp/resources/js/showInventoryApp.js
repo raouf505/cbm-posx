@@ -3,7 +3,6 @@ define(["jquery", "underscore", "backbone", "marionette"], function($, _, Backbo
 	
 	var initialize = function(){
 		var App = new Marionette.Application();
-		
 	};
 
 	return {
