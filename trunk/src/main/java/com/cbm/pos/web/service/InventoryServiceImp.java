@@ -1,5 +1,7 @@
 package com.cbm.pos.web.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +11,7 @@ import com.cbm.pos.web.domain.InventoryItem;
 
 @Service
 @Transactional
-public class InventoryItemServiceImp implements InventoryItemService {
+public class InventoryServiceImp implements InventoryService {
 	
 	@Autowired
 	private InventoryItemDao inventoryItemDao;
@@ -23,6 +25,11 @@ public class InventoryItemServiceImp implements InventoryItemService {
 	@Override
 	public void add(InventoryItem inventoryItem) {
 		inventoryItemDao.add(inventoryItem);
+	}
+	
+	@Override
+	public List<InventoryItem> listAll() {
+		return inventoryItemDao.listAll();
 	}
 	
 }

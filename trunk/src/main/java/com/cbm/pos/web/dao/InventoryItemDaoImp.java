@@ -1,5 +1,8 @@
 package com.cbm.pos.web.dao;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,6 +24,12 @@ public class InventoryItemDaoImp implements InventoryItemDao {
 	public boolean delete(InventoryItem inventoryItem) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<InventoryItem> listAll() {
+		return (ArrayList<InventoryItem>)sessionFactory.getCurrentSession().createCriteria(InventoryItem.class).list();
 	}
 
 	@Override
