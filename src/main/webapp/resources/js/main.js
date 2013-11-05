@@ -25,6 +25,8 @@ require.config({
 	  }
 });
 
-require(["app"], function(App){
+// this includes an specific "app" defined on mainTemplate.jsp defined as "backboneApp".
+// "backboneApp" value is defined on tiles definition
+require([backboneApp], function(App){
 	App.initialize();
 });

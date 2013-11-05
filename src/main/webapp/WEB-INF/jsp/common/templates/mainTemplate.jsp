@@ -12,8 +12,16 @@
 	
 	<!-- End Styles -->
 	
-	<!-- Load the script "/resources/js/main.js" as our entry point -->
-	<script data-main="/resources/js/main" src="/resources/js/lib/require.js"></script>
+	<!-- Load the script "/resources/js/main.js" as our entry point if "backboneApp" comes from tile configuration -->
+	<!-- creates "backboneApp" global variable in order to include specific app on main.js -->
+	<tiles:useAttribute id="backboneApp" name="backboneApp" classname="java.lang.String" ignore="true"/>
+	<c:if test="${ !empty backboneApp }">
+		<script type="text/javascript">
+			var backboneApp = "${ backboneApp }";
+		</script>
+		<script data-main="/resources/js/main" src="/resources/js/lib/require.js"></script>
+	</c:if>
+	
 </head>
 <body id="${ viewName }">
 

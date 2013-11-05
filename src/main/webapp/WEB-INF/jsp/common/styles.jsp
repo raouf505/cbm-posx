@@ -12,9 +12,9 @@
 <!-- Specific Page Styles -->
 
 <tiles:useAttribute id="specificPageStylesList" name="specificPageStylesList" classname="java.util.List" ignore="true"/>
-<c:if test="${!empty specificPageStylesList}">
-	<c:forEach var="item" items="${specificPageStylesList}">
-		<link rel="stylesheet" type="text/css" href="${item}" />
+<c:if test="${ !empty specificPageStylesList }">
+	<c:forEach var="item" items="${ specificPageStylesList }">
+		<link rel="stylesheet" type="text/css" href="/resources/css/${ item }.css" />
 	</c:forEach>
 </c:if>
 
