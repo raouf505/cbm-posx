@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -14,7 +13,7 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+	<mvc:annotation-driven />
 	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/public-resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
@@ -26,21 +25,22 @@
 	<tx:annotation-driven transaction-manager="txManager"/>
 	
 	<!-- Locale resolver -->
-	<beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-		<beans:property name="defaultLocale" value="es_CR" />
-	</beans:bean>
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="es_CR" />
+	</bean>
 
 	<!-- Resolves views selected for rendering by @Controllers to tileView resource -->
-	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
-	</beans:bean>
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean>
 	
-	<beans:bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-		<beans:property name="definitions" value="/WEB-INF/tiles.xml"></beans:property>
-	</beans:bean>
+	<bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions" value="/WEB-INF/tiles.xml" />
+	</bean>
 	
+	<!-- Interceptors -->
 	<mvc:interceptors>
-		<beans:bean class="com.cbm.pos.web.interceptor.ViewNameInModelInterceptor" />
+		<bean class="com.cbm.pos.web.interceptor.ViewNameInModelInterceptor" />
 	</mvc:interceptors>
 	
-</beans:beans>
+</beans>
