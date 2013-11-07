@@ -54,3 +54,9 @@ h2 {
 }
 
 /****** End Buttons *****/
+
+/****** Tables *****/
+td {
+	border: 1px solid #000000;
+}
+/****** End Tables *****/
