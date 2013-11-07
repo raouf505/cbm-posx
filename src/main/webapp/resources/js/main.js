@@ -3,6 +3,8 @@ require.config({
 	paths: {
 		jquery: "lib/jquery-2.0.3.min",
 		underscore: "lib/underscore-min",
+		text: "lib/text",
+		tpl: "lib/tpl",
 		backbone: "lib/backbone-min",
 		bootstrap: "lib/bootstrap.min",
 		marionette: "lib/backbone.marionette.min"
