@@ -58,5 +58,6 @@ h2 {
 /****** Tables *****/
 td {
 	border: 1px solid #000000;
+	padding: 5px;
 }
 /****** End Tables *****/
