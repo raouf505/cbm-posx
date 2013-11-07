@@ -4,7 +4,7 @@
 	<link>
 		<id>inventory</id>
 		<text>Inventario</text>
-		<href>/inventory/show</href>
+		<href>/inventory</href>
 	</link>
 	
 	<link>
