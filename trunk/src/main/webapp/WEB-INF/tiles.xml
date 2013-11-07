@@ -15,9 +15,9 @@
 	
 	<!-- Inventory Items Tiles -->
 	
-	<definition name="showInventory" extends="mainTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/inventory/showInventory.jsp" />
-		<put-attribute name="backboneApp" value="showInventoryApp" />
+	<definition name="inventory" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/inventory/inventory.jsp" />
+		<put-attribute name="backboneApp" value="InventoryApp" />
 		<put-list-attribute name="specificPageStylesList" cascade="true">
 			<add-attribute value="inventory" />
 		</put-list-attribute>
