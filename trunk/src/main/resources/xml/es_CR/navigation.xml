@@ -8,6 +8,12 @@
 	</link>
 	
 	<link>
+		<id>boards</id>
+		<text>Mesas</text>
+		<href>/boards</href>
+	</link>
+	
+	<link>
 		<id>checkIn</id>
 		<text>Facturación</text>
 		<href>/checkIn</href>
