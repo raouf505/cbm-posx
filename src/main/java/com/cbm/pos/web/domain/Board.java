@@ -15,7 +15,7 @@ public class Board implements Serializable {
 	
 	@Id
 	@Column(name = "ID")
-	private int id;
+	private String id;
 	
 	@Column(name = "POSX")
 	private int posX;
@@ -23,11 +23,11 @@ public class Board implements Serializable {
 	@Column(name = "POSY")
 	private int posY;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

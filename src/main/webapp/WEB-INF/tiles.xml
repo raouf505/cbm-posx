@@ -25,4 +25,16 @@
 	
 	<!-- End Inventory Items Tiles -->
 	
+	<!-- Boards Tiles -->
+	
+	<definition name="boards" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/boards/boards.jsp" />
+		<put-attribute name="backboneApp" value="BoardsApp" />
+		<put-list-attribute name="specificPageStylesList" cascade="true">
+			<add-attribute value="boards" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- End Boards Items Tiles -->
+	
 </tiles-definitions>
