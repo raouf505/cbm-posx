@@ -7,7 +7,8 @@ require.config({
 		tpl: "lib/tpl",
 		backbone: "lib/backbone-min",
 		bootstrap: "lib/bootstrap.min",
-		marionette: "lib/backbone.marionette.min"
+		marionette: "lib/backbone.marionette.min",
+		vent: "utils/vent"
 	},
 	shim : {
 	    jquery : {
