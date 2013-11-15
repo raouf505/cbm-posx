@@ -3,7 +3,7 @@ define(["jquery", "underscore", "backbone", "marionette", "views/BoardsCollectio
 	var BoardsApp = new Marionette.Application();
 
 	BoardsApp.addRegions({
-		boardsContainer : "#boardsContainer"
+		boardsContainer : "#boardsRegion"
 	});
 
 	BoardsApp.on("initialize:after", function() {

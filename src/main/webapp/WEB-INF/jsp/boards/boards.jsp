@@ -2,4 +2,4 @@
 
 <h2>${ pageContent.title }</h2>
 
-<div id="boardsContainer"></div>
+<div id="boardsRegion"></div>
