@@ -1,0 +1,9 @@
+body#boards .boardsContainer {
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
+
+body#boards .boardBtn {
+	position: absolute;
+}
