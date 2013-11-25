@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,13 +34,23 @@ public class BoardsController extends CommonController {
 	@RequestMapping
 	public String show(Locale locale, Model model) {
 		logger.info("Boards request handler triggered");
+		
 		model.addAttribute("pageContent", contentManagerService.getContent(locale.toString(), "boardsPage", PageContent.class));
 		
 		return "boards";
 	}
 	
-	@RequestMapping(value = "/crudService", method=RequestMethod.GET)
-	public @ResponseBody List<Board> listAll(Locale locale, Model model) {
+	@RequestMapping(value = "/crudService/{boardId}", method = RequestMethod.PUT)
+	public @ResponseBody boolean update(@PathVariable("boardId") String boardId, @RequestBody Board board) {
+		logger.info("crudService - update handler triggered");
+		
+		boardService.update(board);
+		
+		return true;
+	}
+	
+	@RequestMapping(value = "/crudService", method = RequestMethod.GET)
+	public @ResponseBody List<Board> listAll() {
 		logger.info("crudService - listAll handler triggered");
 		
 		return boardService.listAll();

@@ -9,19 +9,15 @@ define(["jquery", "underscore", "backbone", "marionette", "views/BoardView"], fu
 				return false;
 			},
 			"drop": function(event) {
+				event.preventDefault();
 				var board = event.originalEvent.dataTransfer.mozSourceNode;
-				var boardoffsetLeft = board.offsetLeft;
-				var boardoffsetTop = board.offsetTop;
 				var mouseCurrentPosX = event.originalEvent.clientX;
 				var mouseCurrentPosY = event.originalEvent.clientY;
-				var newPosX = mouseCurrentPosX - this.$el.offset().left;
-				var newPosY = mouseCurrentPosY - this.$el.offset().top;
+				var newPosX = mouseCurrentPosX - this.$el.offset().left - parseInt(board.offsetWidth / 2);
+				var newPosY = mouseCurrentPosY - this.$el.offset().top - parseInt(board.offsetHeight / 2);
 				
 				board.style.left = (newPosX) + "px";
 				board.style.top = (newPosY) + "px";
-				
-			    event.preventDefault();
-			    return false;
 			}
 		}
 	});

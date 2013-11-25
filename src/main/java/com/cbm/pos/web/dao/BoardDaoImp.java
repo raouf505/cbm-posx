@@ -19,6 +19,11 @@ public class BoardDaoImp implements BoardDao {
 	public void add(Board board) {
 		sessionFactory.getCurrentSession().save(board);
 	}
+	
+	@Override
+	public void update(Board board) {
+		sessionFactory.getCurrentSession().update(board);
+	}
 
 	@Override
 	public boolean delete(Board board) {
@@ -30,12 +35,6 @@ public class BoardDaoImp implements BoardDao {
 	@SuppressWarnings("unchecked")
 	public List<Board> listAll() {
 		return (ArrayList<Board>)sessionFactory.getCurrentSession().createCriteria(Board.class).list();
-	}
-
-	@Override
-	public Board findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

@@ -8,10 +8,10 @@ public interface BoardDao {
 
 	void add(Board board);
 	
+	void update(Board board);
+	
 	boolean delete(Board board);
 	
 	List<Board> listAll();
-	
-	Board findById(int id);
 	
 }
