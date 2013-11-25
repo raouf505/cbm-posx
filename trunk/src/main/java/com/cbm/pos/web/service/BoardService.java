@@ -6,9 +6,9 @@ import com.cbm.pos.web.domain.Board;
 
 public interface BoardService {
 	
-	Board searchBySize(int id);
-	
 	void add(Board board);
+	
+	void update(Board board);
 	
 	List<Board> listAll();
 	

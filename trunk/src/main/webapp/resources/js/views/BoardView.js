@@ -3,19 +3,24 @@ define(["marionette", "tpl!templates/boardTemplate.html"], function(Marionette, 
 	return Marionette.ItemView.extend({
 		className: "btn green boardBtn",
 		template: template,
+		attributes: function() {
+			return {
+				"id": "board" + this.model.get("id"),
+				"draggable": true
+			};
+		},
 		events: {
 			"dragstart": function(event) {
-				var style = window.getComputedStyle(event.target, null);
-			    event.originalEvent.dataTransfer.setData("text/plain", (parseInt(style.getPropertyValue("left"),10) - event.originalEvent.clientX) +
-			    		',' + (parseInt(style.getPropertyValue("top"),10) - event.originalEvent.clientY));
-			    
-			    console.log("start dragging")
-
+				event.originalEvent.dataTransfer.setData('text', event.target.id);
+			},
+			"dragend": function(event) {
+				var posX = this.$el.css("left").replace("px", "");
+				var posY = this.$el.css("top").replace("px", "");
+				
+				this.model.save({posX: posX, posY: posY});
 			}
 		},
 		onRender: function() {
-			this.$el.attr("id", "board" + this.model.get("id"));
-			this.$el.attr("draggable", true);
 			this.$el.css("left", this.model.get("posX"));
 			this.$el.css("top", this.model.get("posY"));
 		}

@@ -17,14 +17,13 @@ public class BoardServiceImp implements BoardService {
 	private BoardDao boardDao;
 
 	@Override
-	public Board searchBySize(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public void add(Board board) {
+		boardDao.add(board);
 	}
-
+	
 	@Override
-	public void add(Board inventoryItem) {
-		boardDao.add(inventoryItem);
+	public void update(Board board) {
+		boardDao.update(board);
 	}
 	
 	@Override
