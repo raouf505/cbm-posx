@@ -21,6 +21,10 @@ require.config({
 	      deps : ["jquery", "underscore"],
 	      exports : "Backbone"
 	    },
+	    bootstrap : {
+		      deps : ["jquery"],
+		      exports : "Bootstrap"
+		    },
 	    marionette : {
 	      deps : ["jquery", "underscore", "backbone"],
 	      exports : "Marionette"
