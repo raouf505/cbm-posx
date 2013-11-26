@@ -5,6 +5,6 @@ body#boards .boardsContainer {
 	border: 1px solid #000000;
 }
 
-body#boards .boardBtn {
+body#boards .boardButton {
 	position: absolute;
 }

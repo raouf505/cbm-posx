@@ -1,7 +1,7 @@
 define(["marionette", "tpl!templates/boardTemplate.html", "views/BoardDetailsModalView"], function(Marionette, template, BoardDetailsModalView) {
 	
 	return Marionette.ItemView.extend({
-		className: "btn green boardBtn",
+		className: "button green boardButton",
 		template: template,
 		attributes: function() {
 			return {
@@ -16,8 +16,8 @@ define(["marionette", "tpl!templates/boardTemplate.html", "views/BoardDetailsMod
 				event.originalEvent.dataTransfer.setData('text', event.target.id);
 			},
 			"dragend": function(event) {
-				var posX = this.$el.css("left").replace("px", "");
-				var posY = this.$el.css("top").replace("px", "");
+				var posX = parseInt(this.$el.css("left").replace("px", ""));
+				var posY = parseInt(this.$el.css("top").replace("px", ""));
 				
 				this.model.save({posX: posX, posY: posY});
 			},
