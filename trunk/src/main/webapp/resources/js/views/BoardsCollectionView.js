@@ -1,8 +1,8 @@
-define(["jquery", "underscore", "backbone", "marionette", "views/BoardView"], function($, _, Backbone, Marionette, BoardView) {
+define(["jquery", "underscore", "backbone", "marionette", "layouts/BoardLayout"], function($, _, Backbone, Marionette, BoardLayout) {
 	
 	return Marionette.CollectionView.extend({
 		className: "boardsContainer",
-		itemView: BoardView,
+		itemView: BoardLayout,
 		events: {
 			"dragover": function(event) {
 				event.preventDefault();

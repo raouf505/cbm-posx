@@ -1,4 +1,4 @@
-define(["marionette", "tpl!templates/boardTemplate.html", "views/BoardDetailsModalView"], function(Marionette, template, BoardDetailsModalView) {
+define(["marionette", "tpl!templates/boardTemplate.html"], function(Marionette, template) {
 	
 	return Marionette.ItemView.extend({
 		className: "button green boardButton",
@@ -28,9 +28,6 @@ define(["marionette", "tpl!templates/boardTemplate.html", "views/BoardDetailsMod
 		onRender: function() {
 			this.$el.css("left", this.model.get("posX"));
 			this.$el.css("top", this.model.get("posY"));
-			
-			boardDetailsModalView = new BoardDetailsModalView({model: this.model});
-			this.$(".boardModalContainer").html(boardDetailsModalView.render().el);
 		}
 	});
 	
