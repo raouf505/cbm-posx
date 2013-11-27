@@ -1,8 +1,10 @@
-define(["jquery", "underscore", "backbone", "marionette", "layouts/BoardLayout"], function($, _, Backbone, Marionette, BoardLayout) {
+define(["jquery", "underscore", "backbone", "marionette", "layouts/BoardLayout", "tpl!templates/boardsCompositeTemplate.html"], function($, _, Backbone, Marionette, BoardLayout, template) {
 	
-	return Marionette.CollectionView.extend({
-		className: "boardsContainer",
+	return Marionette.CompositeView.extend({
+		id: "boardsComponent",
+		template: template,
 		itemView: BoardLayout,
+		itemViewContainer: "#boardsContainer",
 		events: {
 			"dragover": function(event) {
 				event.preventDefault();
