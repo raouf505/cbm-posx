@@ -13,6 +13,21 @@ body {
 h2 {
 	font-size: 35px;
 }
+
+#emptyImg {
+	width: 102px;
+	height: 66px;
+	overflow: hidden;
+	position: absolute;
+	left: calc(50% - 51px);
+	top: calc(50% - 33px);
+}
+
+#emptyImg img {
+	position: absolute;
+	left: -200px;
+    top: -155px;
+}
 /***** End common styles *****/
 
 /***** overwritted bootstrap styles *****/
