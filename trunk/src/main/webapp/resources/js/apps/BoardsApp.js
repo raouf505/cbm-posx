@@ -1,21 +1,21 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "views/BoardsCollectionView", "collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCollectionView, BoardsCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "views/BoardsCompositeView", "collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsCollection) {
 	
 	var BoardsApp = new Marionette.Application();
 
 	BoardsApp.addRegions({
-		boardsContainer : "#boardsRegion"
+		boardsComponentRegion : "#boardsComponentRegion"
 	});
 
 	BoardsApp.on("initialize:after", function() {
-		var boardsCollectionView;
+		var boardsCompositeView;
 		var boardsCollection = new BoardsCollection();
 		boardsCollection.fetch({
 			success: function() {
-				boardsCollectionView = new BoardsCollectionView({
+				boardsCompositeView = new BoardsCompositeView({
 					collection: boardsCollection
 				});
 				
-				BoardsApp.boardsContainer.show(boardsCollectionView);
+				BoardsApp.boardsComponentRegion.show(boardsCompositeView);
 			}
 		});
 
