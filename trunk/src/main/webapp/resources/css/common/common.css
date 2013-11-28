@@ -35,6 +35,11 @@ a:hover, a:focus {
 	color: #ffffff;
 	text-decoration: none;
 }
+
+.modal-title {
+	font-size: 18px;
+	font-weight: bold;
+}
 /***** End overwritted bootstrap styles *****/
 
 /***** Buttons *****/
