@@ -2,8 +2,8 @@
 
 <!-- Common Styles -->
 
-<link rel="stylesheet" type="text/css" href="/resources/css/common/reset.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common/reset.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common/common.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common/header.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common/footer.css" />

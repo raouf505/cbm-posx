@@ -21,6 +21,9 @@ define(["jquery", "underscore", "backbone", "marionette", "layouts/BoardLayout",
 				
 				board.style.left = (newPosX) + "px";
 				board.style.top = (newPosY) + "px";
+			},
+			"#addBoard click": function() {
+				$("#addBoardModal").modal("show");
 			}
 		}
 	});
