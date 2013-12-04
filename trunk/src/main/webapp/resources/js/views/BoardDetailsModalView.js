@@ -5,7 +5,7 @@ define(["marionette", "tpl!templates/boardDetailsModalTemplate.html"], function(
 		template: template,
 		attributes: function() {
 			return {
-				"id": "boardModal" + this.model.get("id")
+				"id": "boardModal" + this.model.get("name")
 			};
 		}
 	});

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,8 +16,12 @@ public class Board implements Serializable {
 	private static final long serialVersionUID = -5527566248002296042L;
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "ID")
-	private String id;
+	private int id;
+	
+	@Column(name = "NAME")
+	private String name;
 	
 	@Column(name = "POSX")
 	private int posX;
@@ -23,12 +29,20 @@ public class Board implements Serializable {
 	@Column(name = "POSY")
 	private int posY;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getPosX() {

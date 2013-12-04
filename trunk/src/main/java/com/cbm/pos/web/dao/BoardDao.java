@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface BoardDao {
 
-	void add(Board board);
+	Board add(Board board);
 	
 	void update(Board board);
 	
-	boolean delete(Board board);
+	void delete(int boardId);
 	
 	List<Board> listAll();
 	
