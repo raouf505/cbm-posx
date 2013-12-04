@@ -6,9 +6,11 @@ import com.cbm.pos.web.domain.Board;
 
 public interface BoardService {
 	
-	void add(Board board);
+	Board add(Board board);
 	
 	void update(Board board);
+	
+	void delete(int boardId);
 	
 	List<Board> listAll();
 	

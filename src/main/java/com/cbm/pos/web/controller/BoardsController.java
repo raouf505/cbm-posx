@@ -40,11 +40,28 @@ public class BoardsController extends CommonController {
 		return "boards";
 	}
 	
+	@RequestMapping(value = "/crudService", method = RequestMethod.POST)
+	public @ResponseBody Board add(@RequestBody Board board) {
+		logger.info("crudService - add handler triggered");
+
+		return boardService.add(board);
+		
+	}
+	
 	@RequestMapping(value = "/crudService/{boardId}", method = RequestMethod.PUT)
 	public @ResponseBody boolean update(@PathVariable("boardId") String boardId, @RequestBody Board board) {
 		logger.info("crudService - update handler triggered");
 		
 		boardService.update(board);
+		
+		return true;
+	}
+	
+	@RequestMapping(value = "/crudService/{boardId}", method = RequestMethod.DELETE)
+	public @ResponseBody boolean delete(@PathVariable("boardId") int boardId) {
+		logger.info("crudService - delete handler triggered");
+		
+		boardService.delete(boardId);
 		
 		return true;
 	}

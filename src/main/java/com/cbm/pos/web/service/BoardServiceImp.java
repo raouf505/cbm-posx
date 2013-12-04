@@ -17,13 +17,18 @@ public class BoardServiceImp implements BoardService {
 	private BoardDao boardDao;
 
 	@Override
-	public void add(Board board) {
-		boardDao.add(board);
+	public Board add(Board board) {
+		return boardDao.add(board);
 	}
 	
 	@Override
 	public void update(Board board) {
 		boardDao.update(board);
+	}
+	
+	@Override
+	public void delete(int boardId) {
+		boardDao.delete(boardId);
 	}
 	
 	@Override

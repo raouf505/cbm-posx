@@ -16,7 +16,7 @@ body#boards #boardsComponent #boardsActionBar {
 	height: 80px;
 }
 
-body#boards #boardsComponent #boardsActionBar #addBoard {
+body#boards #boardsComponent #boardsActionBar #showAddBoardModal {
 	top: 10px;
 	right: 15px;
 }

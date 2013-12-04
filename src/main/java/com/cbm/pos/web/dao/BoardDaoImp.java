@@ -16,8 +16,16 @@ public class BoardDaoImp implements BoardDao {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	public void add(Board board) {
-		sessionFactory.getCurrentSession().save(board);
+	public Board add(Board board) {
+		Board result = null;
+		try {
+			int id = (Integer)sessionFactory.getCurrentSession().save(board);
+			result = (Board)sessionFactory.getCurrentSession().get(Board.class, id);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return result;
 	}
 	
 	@Override
@@ -26,9 +34,9 @@ public class BoardDaoImp implements BoardDao {
 	}
 
 	@Override
-	public boolean delete(Board board) {
-		// TODO Auto-generated method stub
-		return false;
+	public void delete(int boardId) {
+		Board board = (Board)sessionFactory.getCurrentSession().get(Board.class, boardId);
+		sessionFactory.getCurrentSession().delete(board);
 	}
 	
 	@Override
