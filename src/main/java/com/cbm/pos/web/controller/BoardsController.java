@@ -33,7 +33,7 @@ public class BoardsController extends CommonController {
 	
 	@RequestMapping
 	public String show(Locale locale, Model model) {
-		logger.info("Boards request handler triggered");
+		logger.info("Show boards request handler triggered");
 		
 		model.addAttribute("pageContent", contentManagerService.getContent(locale.toString(), "boardsPage", PageContent.class));
 		

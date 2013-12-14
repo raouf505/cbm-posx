@@ -35,6 +35,18 @@
 		</put-list-attribute>
 	</definition>
 	
-	<!-- End Boards Items Tiles -->
+	<!-- End Boards Tiles -->
+	
+	<!-- Menu Tiles -->
+	
+	<definition name="menu" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/menu/menu.jsp" />
+		<put-attribute name="backboneApp" value="MenuApp" />
+		<put-list-attribute name="specificPageStylesList" cascade="true">
+			<add-attribute value="menu" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- End Menu Tiles -->
 	
 </tiles-definitions>

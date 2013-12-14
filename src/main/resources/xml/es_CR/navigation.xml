@@ -14,6 +14,12 @@
 	</link>
 	
 	<link>
+		<id>menu</id>
+		<text>Menú</text>
+		<href>/menu</href>
+	</link>
+	
+	<link>
 		<id>checkIn</id>
 		<text>Facturación</text>
 		<href>/checkIn</href>
