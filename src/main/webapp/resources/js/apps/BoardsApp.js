@@ -12,7 +12,7 @@ define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "views/Bo
 			collection: this.boardsCollection
 		});
 		
-		BoardsApp.boardsComponentRegion.show(this.boardsCompositeView);
+		this.boardsComponentRegion.show(this.boardsCompositeView);
 		this.boardsCollection.fetch();
 
 	});
