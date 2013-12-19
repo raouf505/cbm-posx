@@ -4,7 +4,7 @@ define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", 
 		id: "menuComponent",
 		template: template,
 		itemView: MenuItemView,
-		itemViewContainer: "#menuContainer",
+		itemViewContainer: "#menuItemsList",
 		emptyView: EmptyView
 	});
 	
