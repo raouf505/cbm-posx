@@ -13,7 +13,7 @@ define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "views/Me
 		});
 		
 		this.menuComponentRegion.show(this.menuCompositeView);
-		this.menuCollection.fetch();
+		this.menuCollection.fetch({reset: true});
 
 	});
 

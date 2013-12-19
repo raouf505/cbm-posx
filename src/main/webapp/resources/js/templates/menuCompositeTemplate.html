@@ -1,1 +1,30 @@
-<table id="menuContainer"></table>
+<div id="menuContainer">
+	<table id="menuItemsList"></table>
+</div>
+<div id="menuActionBar">
+	<div id="showAddMenuItemModal" class="button green menuItemButton" data-toggle="modal" data-target="#addMenuItemModal">+</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="addMenuItemModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Agregar mesa</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<input type="text" placeholder="Nombre de mesa" name="menuItemName" id="menuItemName" />
+					</form>
+					<p id="addMenuItemModalErrorMsg" class="text-danger"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="button" id="addMenuItemBtn" class="btn btn-success">Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal -->
+
+</div>
