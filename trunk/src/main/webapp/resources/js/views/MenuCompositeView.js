@@ -5,7 +5,10 @@ define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", 
 		template: template,
 		itemView: MenuItemView,
 		itemViewContainer: "#menuItemsList",
-		emptyView: EmptyView
+		emptyView: EmptyView,
+		appendHtml: function(collectionView, itemView, index) {
+			collectionView.$el.append(itemView.el);
+		}
 	});
 	
 });
