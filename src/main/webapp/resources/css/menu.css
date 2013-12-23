@@ -8,6 +8,12 @@ body#menu #menuComponent #menuContainer {
 	width: 100%;
 	height: 420px;
 	border-bottom: 1px solid #000000;
+	padding: 20px;
+}
+
+body#menu #menuComponent #menuContainer table tr td {
+	padding: 5px 10px;
+	font-size: 18px;
 }
 
 body#menu #menuComponent #menuActionBar {

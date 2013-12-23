@@ -1,7 +1,7 @@
 /***** Common styles *****/
 body {
 	color: #333333;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Comic Sans MS, verdana;
     font-size: 14px;
     line-height: inherit;
 }
@@ -12,6 +12,10 @@ body {
 
 h2 {
 	font-size: 35px;
+}
+
+a, a:hover, a:active, a:focus {
+  outline: 0;
 }
 
 #emptyImg {
