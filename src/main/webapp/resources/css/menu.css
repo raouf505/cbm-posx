@@ -16,6 +16,12 @@ body#menu #menuComponent #menuContainer table tr td {
 	font-size: 18px;
 }
 
+body#menu #menuComponent #menuContainer table tr th {
+	padding: 5px 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
 body#menu #menuComponent #menuActionBar {
 	position: relative;
 	width: 100%;

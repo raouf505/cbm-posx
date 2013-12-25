@@ -90,7 +90,7 @@ a:hover, a:focus {
 /****** End Buttons *****/
 
 /****** Tables *****/
-td {
+td, th {
 	border: 1px solid #000000;
 	padding: 5px;
 }

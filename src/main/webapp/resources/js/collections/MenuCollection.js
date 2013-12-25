@@ -1,7 +1,7 @@
-define(["backbone", "models/BoardModel"], function(Backbone, MenuModel) {
+define(["backbone", "models/MenuItemModel"], function(Backbone, MenuItemModel) {
 	
 	return Backbone.Collection.extend({
-		model: MenuModel,
+		model: MenuItemModel,
 		url: '/menu/crudService',
 		comparator: "category"
 	});
