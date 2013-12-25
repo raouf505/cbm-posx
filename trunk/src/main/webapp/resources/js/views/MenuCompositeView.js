@@ -26,11 +26,30 @@ define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", 
 					
 					this.ui.menuCategoryTabs.append("<li class='" + tabActiveClass + "'><a href=#" + tableId + " data-toggle='tab'>" + category + "</a></li>");
 					collectionView.$(collectionView.itemViewContainer).append("<table id='" + tableId + "' class='tab-pane fade " + tableActiveClass + "'></table>");
-				}
-				
-				if (index == 0) {
-					collectionView.$("#" + tableId).addClass("in active");
-					collectionView.$("#" + tableId).addClass("in active");
+					
+					var tableHeaders = "<tr>";
+					for (var prop in itemView.model.attributes) {
+						if (prop != "id" && prop != "category") {
+							var tableHeaderName = "";
+							switch(prop) {
+								case "number":
+									tableHeaderName = "numero";
+									break;
+								case "name":
+									tableHeaderName = "nombre";
+									break;
+								case "price":
+									tableHeaderName = "precio";
+									break;
+								default:
+									tableHeaderName = prop;
+							}
+							
+							tableHeaders += "<th>" + tableHeaderName + "</th>";
+						}
+					}
+					tableHeaders += "</tr>";
+					collectionView.$("#" + tableId).append(tableHeaders);
 				}
 				
 				collectionView.$("#" + tableId).append(itemView.el);
