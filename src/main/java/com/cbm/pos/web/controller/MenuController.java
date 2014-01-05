@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,7 +21,7 @@ import com.cbm.pos.web.service.MenuItemService;
 @RequestMapping("/menu")
 public class MenuController extends CommonController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(BoardsController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MenuController.class);
 	
 	@Autowired
 	private MenuItemService menuItemService;
@@ -31,6 +32,14 @@ public class MenuController extends CommonController {
 		model.addAttribute("pageContent", contentManagerService.getContent(locale.toString(), "menuPage", PageContent.class));
 		
 		return "menu";
+	}
+	
+	@RequestMapping(value = "/crudService", method = RequestMethod.POST)
+	public @ResponseBody MenuItem add(@RequestBody MenuItem menuItem) {
+		logger.info("crudService - add handler triggered");
+
+		return menuItemService.add(menuItem);
+		
 	}
 	
 	@RequestMapping(value = "/crudService", method = RequestMethod.GET)

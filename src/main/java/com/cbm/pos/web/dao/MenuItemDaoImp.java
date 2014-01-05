@@ -15,18 +15,18 @@ public class MenuItemDaoImp implements MenuItemDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-//	@Override
-//	public MenuItem add(MenuItem menuItem) {
-//		MenuItem result = null;
-//		try {
-//			int id = (Integer)sessionFactory.getCurrentSession().save(menuItem);
-//			result = (MenuItem)sessionFactory.getCurrentSession().get(MenuItem.class, id);
-//		} catch(Exception e) {
-//			System.out.println(e.getMessage());
-//		}
-//
-//		return result;
-//	}
+	@Override
+	public MenuItem add(MenuItem menuItem) {
+		MenuItem result = null;
+		try {
+			int id = (Integer)sessionFactory.getCurrentSession().save(menuItem);
+			result = (MenuItem)sessionFactory.getCurrentSession().get(MenuItem.class, id);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return result;
+	}
 //	
 //	@Override
 //	public void update(MenuItem menuItem) {

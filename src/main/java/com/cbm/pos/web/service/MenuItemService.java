@@ -6,7 +6,7 @@ import com.cbm.pos.web.domain.MenuItem;
 
 public interface MenuItemService {
 	
-//	MenuItem add(MenuItem menuItem);
+	MenuItem add(MenuItem menuItem);
 //	
 //	void update(MenuItem menuItem);
 //	

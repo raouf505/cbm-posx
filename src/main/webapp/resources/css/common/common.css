@@ -95,3 +95,10 @@ td, th {
 	padding: 5px;
 }
 /****** End Tables *****/
+
+/****** Modals *****/
+.modal .modal-body input, .modal .modal-body select {
+	margin: 15px 0 0 0;
+	width: 150px;
+}
+/****** End Modals *****/
