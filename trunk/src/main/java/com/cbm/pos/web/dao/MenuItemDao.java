@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MenuItemDao {
 
-//	MenuItem add(MenuItem menuItem);
+	MenuItem add(MenuItem menuItem);
 //	
 //	void update(MenuItem menuItem);
 //	

@@ -16,10 +16,10 @@ public class MenuItemServiceImp implements MenuItemService {
 	@Autowired
 	private MenuItemDao menuItemDao;
 
-//	@Override
-//	public MenuItem add(MenuItem menuItem) {
-//		return menuItemDao.add(menuItem);
-//	}
+	@Override
+	public MenuItem add(MenuItem menuItem) {
+		return menuItemDao.add(menuItem);
+	}
 //	
 //	@Override
 //	public void update(MenuItem menuItem) {

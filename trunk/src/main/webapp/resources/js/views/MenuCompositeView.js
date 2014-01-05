@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", "tpl!templates/menuCompositeTemplate.html", "views/EmptyView"], function($, _, Backbone, Marionette, MenuItemView, template, EmptyView) {
+define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", "models/MenuItemModel", "tpl!templates/menuCompositeTemplate.html", "views/EmptyView"], function($, _, Backbone, Marionette, MenuItemView, MenuItemModel, template, EmptyView) {
 	
 	return Marionette.CompositeView.extend({
 		id: "menuComponent",
@@ -7,7 +7,35 @@ define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", 
 		itemViewContainer: "#menuItemsList",
 		emptyView: EmptyView,
 		ui: {
-			menuCategoryTabs: "#menuCategoryTabs"
+			menuCategoryTabs: "#menuCategoryTabs",
+			addMenuItemForm: "#addMenuItemForm",
+			errorMsg: "#addMenuItemModalErrorMsg"
+		},
+		events: {
+			"submit form": function(event) {
+				event.preventDefault();
+				var menuItemModelData = {
+						number: this.$(addMenuItemForm).find("[name='number']").val(),
+						name: this.$(addMenuItemForm).find("[name='name']").val(),
+						price: this.$(addMenuItemForm).find("[name='price']").val(),
+						category: this.$(addMenuItemForm).find("[name='category']").val()
+				};
+				
+				var menuItemModel = new MenuItemModel();
+				
+				if (!menuItemModel.set(menuItemModelData, {validate: true})) {
+					this.ui.errorMsg.html(menuItemModel.validationError);
+				} else if(this.collection.findWhere({name: menuItemModelData.name}) || this.collection.findWhere({number: menuItemModelData.number})) {
+					this.ui.errorMsg.html("El item ya existe.");
+				} else {
+					this.collection.create(menuItemModel);
+					this.ui.errorMsg.html("");
+					this.$("#addMenuItemModal").modal("hide");
+				}
+			},
+			"click #addMenuItemBtn": function() {
+				this.$(addMenuItemForm).trigger("submit");
+			}
 		},
 		appendHtml: function(collectionView, itemView, index) {
 			var category = itemView.model.get("category");
