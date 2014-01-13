@@ -1,4 +1,4 @@
-define(["marionette", "tpl!templates/boardLayoutTemplate.html", "views/BoardButtonView", "views/BoardDetailsModalView"], function(Marionette, template, BoardButtonView, BoardDetailsModalView) {
+define(["marionette", "tpl!boards/templates/boardLayoutViewTpl.html", "boards/views/BoardButtonView", "boards/views/BoardDetailsModalView"], function(Marionette, template, BoardButtonView, BoardDetailsModalView) {
 	
 	return Marionette.Layout.extend({
 		className: "boardLayout",

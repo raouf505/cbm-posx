@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "marionette", "models/BoardModel", "layouts/BoardLayout", "tpl!templates/boardsCompositeTemplate.html", "views/EmptyView"], function($, _, Backbone, Marionette, BoardModel, BoardLayout, template, EmptyView) {
+define(["jquery", "underscore", "backbone", "marionette", "boards/models/BoardModel", "boards/views/BoardLayoutView", "tpl!boards/templates/boardsCompositeViewTpl.html", "views/EmptyView"], function($, _, Backbone, Marionette, BoardModel, BoardLayout, template, EmptyView) {
 	
 	return Marionette.CompositeView.extend({
 		id: "boardsComponent",
