@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "views/BoardsCompositeView", "collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsCompositeView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsCollection) {
 	
 	BoardsApp = new Marionette.Application();
 

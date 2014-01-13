@@ -1,4 +1,4 @@
-define(["marionette", "tpl!templates/boardDetailsModalTemplate.html"], function(Marionette, template) {
+define(["marionette", "tpl!boards/templates/boardDetailsModalViewTpl.html"], function(Marionette, template) {
 	
 	return Marionette.ItemView.extend({
 		className: "modal fade",

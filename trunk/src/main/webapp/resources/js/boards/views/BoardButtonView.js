@@ -1,4 +1,4 @@
-define(["marionette", "tpl!templates/boardButtonTemplate.html"], function(Marionette, template) {
+define(["marionette", "tpl!boards/templates/boardButtonViewTpl.html"], function(Marionette, template) {
 	
 	return Marionette.ItemView.extend({
 		className: "button green boardButton",
