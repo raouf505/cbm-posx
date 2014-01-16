@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "marionette", "views/MenuItemView", "models/MenuItemModel", "tpl!templates/menuCompositeTemplate.html", "views/EmptyView"], function($, _, Backbone, Marionette, MenuItemView, MenuItemModel, template, EmptyView) {
+define(["jquery", "underscore", "backbone", "marionette", "menu/views/MenuItemView", "menu/models/MenuItemModel", "tpl!menu/templates/menuCompositeViewTpl.html", "views/EmptyView"], function($, _, Backbone, Marionette, MenuItemView, MenuItemModel, template, EmptyView) {
 	
 	return Marionette.CompositeView.extend({
 		id: "menuComponent",

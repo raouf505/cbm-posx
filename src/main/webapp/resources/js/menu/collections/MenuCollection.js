@@ -1,4 +1,4 @@
-define(["backbone", "models/MenuItemModel"], function(Backbone, MenuItemModel) {
+define(["backbone", "menu/models/MenuItemModel"], function(Backbone, MenuItemModel) {
 	
 	return Backbone.Collection.extend({
 		model: MenuItemModel,

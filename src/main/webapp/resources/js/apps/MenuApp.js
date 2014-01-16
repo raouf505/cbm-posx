@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "views/MenuCompositeView", "collections/MenuCollection"], function($, _, Backbone, Bootstrap, Marionette, MenuCompositeView, MenuCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "menu/views/MenuCompositeView", "menu/collections/MenuCollection"], function($, _, Backbone, Bootstrap, Marionette, MenuCompositeView, MenuCollection) {
 	
 	MenuApp = new Marionette.Application();
 
