@@ -2,7 +2,11 @@ define(["marionette", "tpl!menu/templates/menuItemViewTpl.html"], function(Mario
 	
 	return Marionette.ItemView.extend({
 		tagName: "tr",
-		template: template
+		template: template,
+		attributes: {
+			"data-toggle": "modal",
+			"data-target": "#MenuItemUpdateModal"
+		}
 	});
 	
 });
