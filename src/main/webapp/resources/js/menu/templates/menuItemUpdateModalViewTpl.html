@@ -2,21 +2,25 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h4 class="modal-title">Modificar item</h4>
+			<h4 class="modal-title">Agregar Item</h4>
 		</div>
 		<div class="modal-body">
-			<form>
-				<label for="id">Número:</label><br />
-				<input type="text" name="number" id="number" value="" />
-				<label for="id">Nombre:</label><br />
-				<input type="text" name="name" id="name" value="" />
+			<form id="updateMenuItemForm" action="#">
+				<input type="text" placeholder="Numero" name="number" /><br />
+				<input type="text" placeholder="Nombre" name="name" /><br />
+				<input type="text" placeholder="Precio" name="price" /><br />
+				<select name="category" title="Category">
+					<option>Bebidas</option>
+					<option>Entradas</option>
+					<option>Arroces</option>
+					<option>Carnes</option>
+				</select>
 			</form>
 			<p id="updateMenuItemModalErrorMsg" class="text-danger"></p>
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 			<button type="button" id="updateMenuItemBtn" class="btn btn-success">Guardar</button>
-			<button type="button" id="deleteMenuItemBtn" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
 		</div>
 	</div>
 </div>
