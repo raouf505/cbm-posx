@@ -27,11 +27,11 @@ public class MenuItemDaoImp implements MenuItemDao {
 
 		return result;
 	}
-//	
-//	@Override
-//	public void update(MenuItem menuItem) {
-//		sessionFactory.getCurrentSession().update(menuItem);
-//	}
+	
+	@Override
+	public void update(MenuItem menuItem) {
+		sessionFactory.getCurrentSession().update(menuItem);
+	}
 //
 //	@Override
 //	public void delete(int menuItemId) {

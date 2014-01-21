@@ -7,8 +7,8 @@ import java.util.List;
 public interface MenuItemDao {
 
 	MenuItem add(MenuItem menuItem);
-//	
-//	void update(MenuItem menuItem);
+	
+	void update(MenuItem menuItem);
 //	
 //	void delete(int menuItemId);
 	
