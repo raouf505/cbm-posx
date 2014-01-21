@@ -9,8 +9,8 @@ public interface MenuItemService {
 	MenuItem add(MenuItem menuItem);
 	
 	void update(MenuItem menuItem);
-//	
-//	void delete(int menuItemId);
+	
+	void delete(int menuItemId);
 	
 	List<MenuItem> listAll();
 	

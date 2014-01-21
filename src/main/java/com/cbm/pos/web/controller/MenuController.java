@@ -52,6 +52,15 @@ public class MenuController extends CommonController {
 		return true;
 	}
 	
+	@RequestMapping(value = "/crudService/{menuItemId}", method = RequestMethod.DELETE)
+	public @ResponseBody boolean delete(@PathVariable("menuItemId") int menuItemId) {
+		logger.info("crudService - delete handler triggered");
+		
+		menuItemService.delete(menuItemId);
+		
+		return true;
+	}
+	
 	@RequestMapping(value = "/crudService", method = RequestMethod.GET)
 	public @ResponseBody List<MenuItem> listAll() {
 		logger.info("crudService - listAll handler triggered");

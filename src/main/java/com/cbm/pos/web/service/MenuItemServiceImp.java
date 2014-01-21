@@ -25,11 +25,11 @@ public class MenuItemServiceImp implements MenuItemService {
 	public void update(MenuItem menuItem) {
 		menuItemDao.update(menuItem);
 	}
-//	
-//	@Override
-//	public void delete(int menuItemId) {
-//		menuItemDao.delete(menuItemId);
-//	}
+	
+	@Override
+	public void delete(int menuItemId) {
+		menuItemDao.delete(menuItemId);
+	}
 	
 	@Override
 	public List<MenuItem> listAll() {
