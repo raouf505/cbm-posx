@@ -21,6 +21,9 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemUpdateModalViewTpl.htm
 					}})) {
 					this.$("#updateMenuItemModalErrorMsg").html(this.model.validationError);
 				}
+			},
+			"click #deleteMenuItemBtn": function() {
+				this.model.destroy();
 			}
 		},
 		onRender: function() {

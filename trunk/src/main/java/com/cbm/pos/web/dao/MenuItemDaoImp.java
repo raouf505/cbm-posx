@@ -32,12 +32,12 @@ public class MenuItemDaoImp implements MenuItemDao {
 	public void update(MenuItem menuItem) {
 		sessionFactory.getCurrentSession().update(menuItem);
 	}
-//
-//	@Override
-//	public void delete(int menuItemId) {
-//		MenuItem menuItem = (MenuItem)sessionFactory.getCurrentSession().get(MenuItem.class, menuItemId);
-//		sessionFactory.getCurrentSession().delete(menuItem);
-//	}
+
+	@Override
+	public void delete(int menuItemId) {
+		MenuItem menuItem = (MenuItem)sessionFactory.getCurrentSession().get(MenuItem.class, menuItemId);
+		sessionFactory.getCurrentSession().delete(menuItem);
+	}
 	
 	@Override
 	@SuppressWarnings("unchecked")
