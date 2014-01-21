@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,6 +41,15 @@ public class MenuController extends CommonController {
 
 		return menuItemService.add(menuItem);
 		
+	}
+	
+	@RequestMapping(value = "/crudService/{menuItemId}", method = RequestMethod.PUT)
+	public @ResponseBody boolean update(@PathVariable("menuItemId") String menuItemId, @RequestBody MenuItem menuItem) {
+		logger.info("crudService - update handler triggered");
+		
+		menuItemService.update(menuItem);
+		
+		return true;
 	}
 	
 	@RequestMapping(value = "/crudService", method = RequestMethod.GET)
