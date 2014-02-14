@@ -49,4 +49,16 @@
 	
 	<!-- End Menu Tiles -->
 	
+	<!-- CheckIn Tiles -->
+	
+	<definition name="checkIn" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/checkIn/checkIn.jsp" />
+		<put-attribute name="backboneApp" value="CheckInApp" />
+		<put-list-attribute name="specificPageStylesList" cascade="true">
+			<add-attribute value="checkIn" />
+		</put-list-attribute>
+	</definition>
+	
+	<!-- End CheckIn Tiles -->
+	
 </tiles-definitions>
