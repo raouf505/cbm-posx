@@ -33,7 +33,7 @@
 </head>
 <body id="${ viewName }">
 
-	<tiles:insertAttribute name="header" />
+<%-- 	<tiles:insertAttribute name="header" /> --%>
 	
 	<div id="pageContent">
 		<tiles:insertAttribute name="content" />
