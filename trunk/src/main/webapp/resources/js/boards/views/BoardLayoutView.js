@@ -9,12 +9,6 @@ define(["marionette", "tpl!boards/templates/boardLayoutViewTpl.html", "boards/vi
 		},
 		onRender: function() {
 			this.boardButtonRegion.show(new BoardButtonView({model: this.model}));
-			this.boardModalRegion.show(new BoardDetailsModalView({model: this.model}));
-			
-			var view = this;
-			this.$(".modal").on('hidden.bs.modal', function() {
-				view.render();
-			});
 		},
 		events: {
 			"click #deleteBoardBtn": function() {

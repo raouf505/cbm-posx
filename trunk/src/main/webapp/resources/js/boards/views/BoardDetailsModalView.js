@@ -1,12 +1,15 @@
-define(["marionette", "tpl!boards/templates/boardDetailsModalViewTpl.html"], function(Marionette, template) {
+define(["marionette", "vent", "tpl!boards/templates/boardDetailsModalViewTpl.html"], function(Marionette, vent, template) {
 	
 	return Marionette.ItemView.extend({
 		className: "modal fade",
 		template: template,
-		attributes: function() {
-			return {
-				"id": "boardModal" + this.model.get("name")
-			};
+		id: "boardDetailsModal",
+		onRender: function() {
+			var view = this;
+			vent.on("boardButtonView:click", function(model) {
+				view.model = model;
+				view.$("[name='name']").val(model.get("name"));
+			});
 		}
 	});
 	
