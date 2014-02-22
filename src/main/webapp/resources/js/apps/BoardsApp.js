@@ -1,9 +1,10 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsCompositeView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsCompositeView", "boards/views/BoardDetailsModalView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardDetailsModalView, BoardsCollection) {
 	
 	BoardsApp = new Marionette.Application();
 
 	BoardsApp.addRegions({
-		boardsComponentRegion : "#boardsComponentRegion"
+		boardsComponentRegion : "#boardsComponentRegion",
+		boardDetailsModalViewRegion: "#boardDetailsModalViewRegion"
 	});
 
 	BoardsApp.on("initialize:after", function() {
@@ -14,6 +15,8 @@ define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/v
 		
 		this.boardsComponentRegion.show(this.boardsCompositeView);
 		this.boardsCollection.fetch();
+		
+		this.boardDetailsModalViewRegion.show(new BoardDetailsModalView());
 
 	});
 
