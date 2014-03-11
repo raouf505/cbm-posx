@@ -4,6 +4,9 @@ define(["marionette", "vent", "tpl!boards/templates/boardDetailsModalViewTpl.htm
 		className: "modal fade",
 		template: template,
 		id: "boardDetailsModal",
+		ui: {
+			updateBoardModalErrorMsg: "#updateBoardModalErrorMsg"
+		},
 		events: {
 			"click #deleteBoardBtn": function() {
 				this.model.destroy();
@@ -13,10 +16,10 @@ define(["marionette", "vent", "tpl!boards/templates/boardDetailsModalViewTpl.htm
 				var boardName = this.$("#name").val();
 				
 				if(boardModel.collection.findWhere({name: boardName})) {
-					this.$("#updateBoardModalErrorMsg").html("La mesa ya existe.");
+					this.ui.updateBoardModalErrorMsg.html("La mesa ya existe.");
 				}
 				else if (!boardModel.save({name: boardName})) {
-					this.$("#updateBoardModalErrorMsg").html(boardModel.validationError);
+					this.ui.updateBoardModalErrorMsg.html(boardModel.validationError);
 				} else {
 					this.$el.modal("hide");
 				}
@@ -27,6 +30,10 @@ define(["marionette", "vent", "tpl!boards/templates/boardDetailsModalViewTpl.htm
 			vent.on("boardButtonView:click", function(model) {
 				view.model = model;
 				view.$("[name='name']").val(model.get("name"));
+			});
+			
+			this.$el.on("hidden.bs.modal", function(e) {
+				view.ui.updateBoardModalErrorMsg.html("");
 			});
 		}
 	});

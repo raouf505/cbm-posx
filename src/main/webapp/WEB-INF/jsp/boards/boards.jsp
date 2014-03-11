@@ -5,3 +5,4 @@
 <div id="boardsComponentRegion"></div>
 <div id="boardsActionBarComponentRegion"></div>
 <div id="boardDetailsModalViewRegion"></div>
+<div id="boardsAddBoardModalViewRegion"></div>

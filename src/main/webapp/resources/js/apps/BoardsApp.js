@@ -1,11 +1,12 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsCompositeView", "boards/views/BoardsActionBarComponent", "boards/views/BoardDetailsModalView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsActionBarComponent, BoardDetailsModalView, BoardsCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsCompositeView", "boards/views/BoardsActionBarComponent", "boards/views/BoardDetailsModalView", "boards/views/BoardsAddBoardModalView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsActionBarComponent, BoardDetailsModalView, BoardsAddBoardModalView, BoardsCollection) {
 	
-	BoardsApp = new Marionette.Application();
+	var BoardsApp = new Marionette.Application();
 
 	BoardsApp.addRegions({
 		boardsComponentRegion : "#boardsComponentRegion",
+		boardsActionBarComponentRegion: "#boardsActionBarComponentRegion",
 		boardDetailsModalViewRegion: "#boardDetailsModalViewRegion",
-		boardsActionBarComponentRegion: "#boardsActionBarComponentRegion"
+		boardsAddBoardModalViewRegion: "#boardsAddBoardModalViewRegion",
 	});
 
 	BoardsApp.on("initialize:after", function() {
@@ -19,10 +20,9 @@ define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/v
 		
 		this.boardDetailsModalViewRegion.show(new BoardDetailsModalView());
 		this.boardsActionBarComponentRegion.show(new BoardsActionBarComponent());
+		this.boardsAddBoardModalViewRegion.show(new BoardsAddBoardModalView({collection: this.boardsCollection}));
 
 	});
-
 		
-
 	return BoardsApp;
 });

@@ -29,20 +29,6 @@ define(["jquery", "underscore", "backbone", "marionette", "boards/models/BoardMo
 				
 				board.style.left = (newPosX) + "px";
 				board.style.top = (newPosY) + "px";
-			},
-			"click #addBoardBtn": function() {
-				var boardModel = new BoardModel();
-				var boardName = this.$("#addBoardModal").find("#boardName").val();
-				
-				if (!boardModel.set({name: boardName}, {validate: true})) {
-					this.ui.errorMsg.html(boardModel.validationError);
-				} else if(this.collection.findWhere({name: boardName})) {
-					this.ui.errorMsg.html("La mesa ya existe.");
-				} else {
-					this.collection.create(boardModel);
-					this.ui.errorMsg.html("");
-					this.$("#addBoardModal").modal("hide");
-				}
 			}
 		}
 	});
