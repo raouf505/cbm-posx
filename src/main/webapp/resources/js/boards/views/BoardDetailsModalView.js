@@ -18,8 +18,7 @@ define(["marionette", "vent", "tpl!boards/templates/boardDetailsModalViewTpl.htm
 				else if (!boardModel.save({name: boardName})) {
 					this.$("#updateBoardModalErrorMsg").html(boardModel.validationError);
 				} else {
-					xyz = this;
-					$(this).modal("hide");
+					this.$el.modal("hide");
 				}
 			}
 		},
