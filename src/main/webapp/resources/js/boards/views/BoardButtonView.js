@@ -25,6 +25,11 @@ define(["marionette", "vent", "tpl!boards/templates/boardButtonViewTpl.html"], f
 				vent.trigger("boardButtonView:click", this.model);
 			}
 		},
+		modelEvents: {
+			"change": function() {
+				this.render();
+			}
+		},
 		onRender: function() {
 			this.$el.css("left", this.model.get("posX"));
 			this.$el.css("top", this.model.get("posY"));

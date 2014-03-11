@@ -1,9 +1,9 @@
-define(["jquery", "underscore", "backbone", "marionette", "boards/models/BoardModel", "boards/views/BoardLayoutView", "tpl!boards/templates/boardsCompositeViewTpl.html", "views/EmptyView"], function($, _, Backbone, Marionette, BoardModel, BoardLayout, template, EmptyView) {
+define(["jquery", "underscore", "backbone", "marionette", "boards/models/BoardModel", "boards/views/BoardButtonView", "tpl!boards/templates/boardsCompositeViewTpl.html", "views/EmptyView"], function($, _, Backbone, Marionette, BoardModel, BoardButtonView, template, EmptyView) {
 	
 	return Marionette.CompositeView.extend({
 		id: "boardsComponent",
 		template: template,
-		itemView: BoardLayout,
+		itemView: BoardButtonView,
 		itemViewContainer: "#boardsContainer",
 		itemViewOptions: function() {
 			return {
