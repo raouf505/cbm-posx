@@ -1,28 +1,25 @@
 <div id="boardsContainer"></div>
-<div id="boardsActionBar">
-	<div id="showAddBoardModal" class="button green boardButton" data-toggle="modal" data-target="#addBoardModal">+</div>
 	
-	<!-- Modal -->
-	<div class="modal fade" id="addBoardModal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Agregar mesa</h4>
-				</div>
-				<div class="modal-body">
-					<form>
-						<input type="text" placeholder="Nombre de mesa" name="boardName" id="boardName" />
-					</form>
-					<p id="addBoardModalErrorMsg" class="text-danger"></p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-					<button type="button" id="addBoardBtn" class="btn btn-success">Guardar</button>
-				</div>
+<!-- Modal -->
+<div class="modal fade" id="addBoardModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Agregar mesa</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<input type="text" placeholder="Nombre de mesa" name="boardName" id="boardName" />
+				</form>
+				<p id="addBoardModalErrorMsg" class="text-danger"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" id="addBoardBtn" class="btn btn-success">Guardar</button>
 			</div>
 		</div>
 	</div>
-	<!-- End Modal -->
-
 </div>
+<!-- End Modal -->
+
