@@ -1,25 +1,25 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsCompositeView", "boards/views/BoardsActionBarComponent", "boards/views/BoardDetailsModalView", "boards/views/BoardsAddBoardModalView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsCompositeView, BoardsActionBarComponent, BoardDetailsModalView, BoardsAddBoardModalView, BoardsCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "boards/views/BoardsComponentCollectionView", "boards/views/BoardsActionBarComponentView", "boards/views/BoardDetailsModalView", "boards/views/BoardsAddBoardModalView", "boards/collections/BoardsCollection"], function($, _, Backbone, Bootstrap, Marionette, BoardsComponentCollectionView, BoardsActionBarComponentView, BoardDetailsModalView, BoardsAddBoardModalView, BoardsCollection) {
 	
 	var BoardsApp = new Marionette.Application();
 
 	BoardsApp.addRegions({
-		boardsComponentRegion : "#boardsComponentRegion",
-		boardsActionBarComponentRegion: "#boardsActionBarComponentRegion",
+		boardsComponentCollectionViewRegion : "#boardsComponentCollectionViewRegion",
+		boardsActionBarComponentViewRegion: "#boardsActionBarComponentViewRegion",
 		boardDetailsModalViewRegion: "#boardDetailsModalViewRegion",
 		boardsAddBoardModalViewRegion: "#boardsAddBoardModalViewRegion",
 	});
 
 	BoardsApp.on("initialize:after", function() {
 		this.boardsCollection = new BoardsCollection();
-		this.boardsCompositeView = new BoardsCompositeView({
+		this.boardsComponentCollectionView = new BoardsComponentCollectionView({
 			collection: this.boardsCollection
 		});
 		
-		this.boardsComponentRegion.show(this.boardsCompositeView);
+		this.boardsComponentCollectionViewRegion.show(this.boardsComponentCollectionView);
 		this.boardsCollection.fetch();
 		
 		this.boardDetailsModalViewRegion.show(new BoardDetailsModalView());
-		this.boardsActionBarComponentRegion.show(new BoardsActionBarComponent());
+		this.boardsActionBarComponentViewRegion.show(new BoardsActionBarComponentView());
 		this.boardsAddBoardModalViewRegion.show(new BoardsAddBoardModalView({collection: this.boardsCollection}));
 
 	});
