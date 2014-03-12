@@ -1,15 +1,8 @@
-define(["jquery", "underscore", "backbone", "marionette", "boards/models/BoardModel", "boards/views/BoardButtonView", "tpl!boards/templates/boardsCompositeViewTpl.html", "views/EmptyView"], function($, _, Backbone, Marionette, BoardModel, BoardButtonView, template, EmptyView) {
+define(["jquery", "underscore", "backbone", "marionette", "boards/models/BoardModel", "boards/views/BoardButtonView", "views/EmptyView"], function($, _, Backbone, Marionette, BoardModel, BoardButtonView, EmptyView) {
 	
-	return Marionette.CompositeView.extend({
+	return Marionette.CollectionView.extend({
 		id: "boardsComponent",
-		template: template,
 		itemView: BoardButtonView,
-		itemViewContainer: "#boardsContainer",
-		itemViewOptions: function() {
-			return {
-				collection: this.collection
-			};
-		},
 		emptyView: EmptyView,
 		ui: {
 			errorMsg: "#addBoardModalErrorMsg"
