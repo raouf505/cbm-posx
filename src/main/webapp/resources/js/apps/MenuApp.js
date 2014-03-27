@@ -1,4 +1,4 @@
-define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "menu/views/MenuLayoutView", "menu/collections/MenuCollection"], function($, _, Backbone, Bootstrap, Marionette, MenuLayoutView, MenuCollection) {
+define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "menu/views/MenuComponentCompositeView", "menu/collections/MenuCollection"], function($, _, Backbone, Bootstrap, Marionette, MenuComponentCompositeView, MenuCollection) {
 	
 	MenuApp = new Marionette.Application();
 
@@ -8,11 +8,11 @@ define(["jquery", "underscore", "backbone", "bootstrap", "marionette", "menu/vie
 
 	MenuApp.on("initialize:after", function() {
 		this.menuCollection = new MenuCollection();
-		this.menuLayoutView = new MenuLayoutView({
+		this.menuComponentCompositeView = new MenuComponentCompositeView({
 			collection: this.menuCollection
 		});
 		
-		this.menuComponentRegion.show(this.menuLayoutView);
+		this.menuComponentRegion.show(this.menuComponentCompositeView);
 		this.menuCollection.fetch({reset: true});
 
 	});
