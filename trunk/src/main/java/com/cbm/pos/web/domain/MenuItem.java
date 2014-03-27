@@ -22,7 +22,7 @@ public class MenuItem implements Serializable {
 	private int id;
 	
 	@Column(name = "NUMBER")
-	private String number;
+	private int number;
 	
 	@Column(name = "NAME")
 	private String name;
@@ -41,11 +41,11 @@ public class MenuItem implements Serializable {
 		this.id = id;
 	}
 
-	public String getNumber() {
+	public int getNumber() {
 		return number;
 	}
 
-	public void setNumber(String number) {
+	public void setNumber(int number) {
 		this.number = number;
 	}
 
