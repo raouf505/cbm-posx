@@ -11,6 +11,11 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemViewTpl.html"], functi
 			"click": function() {
 				vent.trigger("menuItemView:click", this.model);
 			}
+		},
+		templateHelpers: function() {
+			return {
+				showByDefault: this.options.showByDefault
+			};
 		}
 	});
 	
