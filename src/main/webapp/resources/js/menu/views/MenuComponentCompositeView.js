@@ -6,6 +6,12 @@ define(["jquery", "underscore", "backbone", "marionette", "menu/views/MenuItemVi
 		itemView: MenuItemView,
 		itemViewContainer: "#menuItemsList",
 		emptyView: EmptyView,
+		categories: ["Entradas", "Bebidas", "Arroces", "Carnes"],
+		itemViewOptions: function(model, index) {
+			return {
+				showByDefault: model.get("category") ==  this.categories[0]
+			};
+		}
 	});
 	
 });
