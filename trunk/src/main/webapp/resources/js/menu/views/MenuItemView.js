@@ -2,15 +2,25 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemViewTpl.html"], functi
 	
 	return Marionette.ItemView.extend({
 		tagName: "tr",
+		className: function() {
+			var className = "tab-pane fade " + this.options.category.toLowerCase() + "MenuItem";
+			if (this.options.showByDefault) {
+				className += " in active";
+			}
+			return className;
+		},
 		template: template,
-		attributes: {
-			"data-toggle": "modal",
-			"data-target": "#MenuItemUpdateModal"
+		attributes: function() {
+			return {
+				//className: "tab-pane fade " + this.options.category + "MenuItem",
+//				"data-toggle": "modal",
+//				"data-target": "#MenuItemUpdateModal"
+			};
 		},
 		events: {
-			"click": function() {
-				vent.trigger("menuItemView:click", this.model);
-			}
+//			"click": function() {
+//				vent.trigger("menuItemView:click", this.model);
+//			}
 		},
 		templateHelpers: function() {
 			return {

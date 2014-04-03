@@ -1,2 +1,16 @@
-<ul id="menuCategoryTabs" class="nav nav-tabs"></ul>
-<table id="menuItemsList" class="tab-content"></table>
+<ul id="menuCategoryTabs" class="nav nav-tabs">
+	<% _.each(categories, function(item, index){ %>
+    	<li <% if (index == 0) { %> class="active" <% } %>>
+    		<a data-toggle="tab" href=".<%= item.toLowerCase() %>MenuItem"><%= item %></a>
+    	</li>
+    <% }); %>
+</ul>
+<table id="menuItemsList">
+	<tbody class="tab-content">
+		<tr>
+			<th>Numero</th>
+			<th>Nombre</th>
+			<th>Precio</th>
+		</tr>
+	</tbody>
+</table>
