@@ -4,7 +4,7 @@ define(["jquery", "underscore", "backbone", "marionette", "menu/views/MenuItemVi
 		id: "menuComponent",
 		template: template,
 		itemView: MenuItemView,
-		itemViewContainer: "#menuItemsList tbody",
+		itemViewContainer: "#menuList",
 		emptyView: EmptyView,
 		categories: ["Entradas", "Bebidas", "Arroces", "Carnes"],
 		itemViewOptions: function(model, index) {
