@@ -1,11 +1,12 @@
-define(['jquery', 'underscore', 'backbone', 'bootstrap', 'marionette', 'menu/views/MenuComponentCompositeView', 'menu/views/MenuItemUpdateModalView', 'menu/views/MenuActionBarView', 'menu/collections/MenuCollection'], function($, _, Backbone, Bootstrap, Marionette, MenuComponentCompositeView, MenuItemUpdateModalView, MenuActionBarView, MenuCollection) {
+define(['jquery', 'underscore', 'backbone', 'bootstrap', 'marionette', 'menu/views/MenuComponentCompositeView', 'menu/views/MenuItemUpdateModalView', 'menu/views/MenuActionBarView', 'menu/views/MenuItemAddModalView', 'menu/collections/MenuCollection'], function($, _, Backbone, Bootstrap, Marionette, MenuComponentCompositeView, MenuItemUpdateModalView, MenuActionBarView, MenuItemAddModalView, MenuCollection) {
 	
 	MenuApp = new Marionette.Application();
 
 	MenuApp.addRegions({
 		menuComponentRegion : '#menuComponentRegion',
 		menuItemUpdateModalRegion : '#menuItemUpdateModalRegion',
-		menuActionBarRegion: '#menuActionBarRegion'
+		menuActionBarRegion: '#menuActionBarRegion',
+		menuItemAddModaRegion: '#menuItemAddModaRegion'
 	});
 
 	MenuApp.on('initialize:after', function() {
@@ -19,6 +20,7 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap', 'marionette', 'menu/vie
 		
 		this.menuItemUpdateModalRegion.show(new MenuItemUpdateModalView());
 		this.menuActionBarRegion.show(new MenuActionBarView());
+		this.menuItemAddModaRegion.show(new MenuItemAddModalView());
 
 	});
 
