@@ -3,7 +3,7 @@ body#menu #menuComponent {
 	border: 1px solid #000000;
 }
 
-body#menu #menuComponent #menuContainer {
+body#menu #menuComponent #menuItemsList {
 	position: relative;
 	width: 100%;
 	height: 420px;
@@ -11,12 +11,12 @@ body#menu #menuComponent #menuContainer {
 	padding: 20px;
 }
 
-body#menu #menuComponent #menuContainer table tr td {
+body#menu #menuComponent #menuItemsList tr td {
 	padding: 5px 10px;
 	font-size: 18px;
 }
 
-body#menu #menuComponent #menuContainer table tr th {
+body#menu #menuComponent #menuItemsList tr th {
 	padding: 5px 10px;
 	font-size: 20px;
 	text-transform: uppercase;
