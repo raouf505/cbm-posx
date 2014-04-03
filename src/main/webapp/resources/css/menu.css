@@ -1,39 +1,61 @@
 body#menu #menuComponent {
 	width: 500px;
 	border: 1px solid #000000;
-}
-
-body#menu #menuComponent #menuItemsList {
-	position: relative;
-	width: 100%;
-	height: 420px;
-	border-bottom: 1px solid #000000;
 	padding: 20px;
 }
 
-body#menu #menuComponent #menuItemsList tr td {
-	padding: 5px 10px;
+body#menu #menuComponent #menuContent {
+	width: 100%;
+	height: 420px;
+	border: 1px solid #000000;
+	padding: 20px;
+}
+
+body#menu #menuComponent #menuContent p {
 	font-size: 18px;
 }
 
-body#menu #menuComponent #menuItemsList tr th {
-	padding: 5px 10px;
-	font-size: 20px;
-	text-transform: uppercase;
+body#menu #menuComponent #menuContent #menuHeader p {
+	font-weight: bold;
 }
 
-body#menu #menuComponent #menuActionBar {
-	position: relative;
-	width: 100%;
-	height: 80px;
+body#menu #menuComponent #menuContent #menuHeader div, body#menu #menuComponent #menuList .menuItem div {
+	display: inline-table;
+	width: 60%;
 }
 
-body#menu #menuComponent #menuActionBar #showAddMenuItemModal {
-	top: 10px;
-	right: 15px;
+body#menu #menuComponent #menuContent #menuHeader div:FIRST-CHILD, body#menu #menuComponent #menuList .menuItem div:FIRST-CHILD {
+	width: 20%;
 }
 
-body#menu .menuItemButton {
-	position: absolute;
-	padding: 5px 20px;
+body#menu #menuComponent #menuContent #menuHeader div:LAST-CHILD, body#menu #menuComponent #menuList .menuItem div:LAST-CHILD {
+	width: 20%;
 }
+
+body#menu #menuComponent #menuContent #menuList {
+	margin: 15px 0 0 0;
+}
+
+body#menu #menuComponent #menuContent #menuList .menuItem {
+	cursor: pointer;
+}
+
+body#menu #menuComponent #menuContent #menuList .menuItem:HOVER div {
+	background-color: #87F03C;
+}
+
+/* body#menu #menuComponent #menuActionBar { */
+/* 	position: relative; */
+/* 	width: 100%; */
+/* 	height: 80px; */
+/* } */
+
+/* body#menu #menuComponent #menuActionBar #showAddMenuItemModal { */
+/* 	top: 10px; */
+/* 	right: 15px; */
+/* } */
+
+/* body#menu .menuItemButton { */
+/* 	position: absolute; */
+/* 	padding: 5px 20px; */
+/* } */
