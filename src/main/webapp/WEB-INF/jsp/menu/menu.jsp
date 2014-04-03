@@ -4,3 +4,4 @@
 
 <div id="menuComponentRegion"></div>
 <div id="menuItemUpdateModalRegion"></div>
+<div id="menuActionBarRegion"></div>
