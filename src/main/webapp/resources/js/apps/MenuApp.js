@@ -20,7 +20,7 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap', 'marionette', 'menu/vie
 		
 		this.menuItemUpdateModalRegion.show(new MenuItemUpdateModalView());
 		this.menuActionBarRegion.show(new MenuActionBarView());
-		this.menuItemAddModaRegion.show(new MenuItemAddModalView());
+		this.menuItemAddModaRegion.show(new MenuItemAddModalView({collection: this.menuCollection}));
 
 	});
 
