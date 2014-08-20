@@ -21,11 +21,10 @@ body#menu #menuComponent #menuContent #menuHeader p {
 
 body#menu #menuComponent #menuContent #menuHeader div, body#menu #menuComponent #menuList .menuItem div {
 	display: inline-table;
-	width: 60%;
 }
 
 body#menu #menuComponent #menuContent #menuHeader div:FIRST-CHILD, body#menu #menuComponent #menuList .menuItem div:FIRST-CHILD {
-	width: 20%;
+	width: 80%;
 }
 
 body#menu #menuComponent #menuContent #menuHeader div:LAST-CHILD, body#menu #menuComponent #menuList .menuItem div:LAST-CHILD {
