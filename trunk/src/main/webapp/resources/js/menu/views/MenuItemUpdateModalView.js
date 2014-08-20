@@ -8,7 +8,6 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemUpdateModalViewTpl.htm
 			"click #updateMenuItemBtn": function() {
 				var view = this;
 				var updatedMenuItemData = {
-						number: this.$("[name='number']").val(),
 						name: this.$("[name='name']").val(),
 						price: this.$("[name='price']").val(),
 						category: this.$("[name='category']").val()
@@ -30,7 +29,6 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemUpdateModalViewTpl.htm
 			var view = this;
 			vent.on("menuItemView:click", function(model) {
 				view.model = model;
-				view.$("[name='number']").val(model.get("number"));
 				view.$("[name='name']").val(model.get("name"));
 				view.$("[name='price']").val(model.get("price"));
 				view.$("[name='category']").val(model.get("category"));

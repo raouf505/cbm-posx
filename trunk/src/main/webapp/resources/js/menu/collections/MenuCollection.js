@@ -3,7 +3,9 @@ define(["backbone", "menu/models/MenuItemModel"], function(Backbone, MenuItemMod
 	return Backbone.Collection.extend({
 		model: MenuItemModel,
 		url: '/menu/crudService',
-		comparator: "number"
+		comparator: function(item) {
+			return item.get("category") + item.get("name");
+		}
 	});
 	
 });
