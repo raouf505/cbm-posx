@@ -3,7 +3,7 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemViewTpl.html"], functi
 	return Marionette.ItemView.extend({
 		tagName: "div",
 		className: function() {
-			var className = "tab-pane fade " + this.options.category.toLowerCase() + "MenuItem menuItem";
+			var className = "tab-pane fade " + this.model.get("category").toLowerCase() + "MenuItem menuItem";
 			if (this.options.showByDefault) {
 				className += " in active";
 			}
@@ -20,11 +20,6 @@ define(["marionette", "vent", "tpl!menu/templates/menuItemViewTpl.html"], functi
 			"click": function() {
 				vent.trigger("menuItemView:click", this.model);
 			}
-		},
-		templateHelpers: function() {
-			return {
-				showByDefault: this.options.showByDefault
-			};
 		}
 	});
 	
