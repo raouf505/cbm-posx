@@ -9,7 +9,6 @@ define(["jquery", "underscore", "backbone", "marionette", "menu/views/MenuItemVi
 		categories: ["Entradas", "Bebidas", "Arroces", "Carnes"],
 		itemViewOptions: function(model, index) {
 			return {
-				category : model.get("category"),
 				showByDefault: model.get("category") ==  this.categories[0]
 			};
 		},
