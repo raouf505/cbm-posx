@@ -3,6 +3,7 @@
 <!-- Common Styles -->
 
 <link rel="stylesheet" type="text/css" href="/resources/css/common/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common/common.css" />
 
 <!-- End Common Styles -->
