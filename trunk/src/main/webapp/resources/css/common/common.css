@@ -1,104 +1,10 @@
 /***** Common styles *****/
-body {
-	color: #333333;
-    font-family: Comic Sans MS, verdana;
-    font-size: 14px;
-    line-height: inherit;
-}
-
-#pageContent {
-	padding: 25px;
-}
-
-h2 {
-	font-size: 35px;
-}
 
 a, a:hover, a:active, a:focus {
   outline: 0;
 }
 
-#emptyImg {
-	width: 102px;
-	height: 66px;
-	overflow: hidden;
-	position: absolute;
-	left: calc(50% - 51px);
-	top: calc(50% - 33px);
-}
-
-#emptyImg img {
-	position: absolute;
-	left: -200px;
-    top: -155px;
-}
 /***** End common styles *****/
 
-/***** overwritted bootstrap styles *****/
-a:hover, a:focus {
-	color: #ffffff;
-	text-decoration: none;
-}
-
-.modal-title {
-	font-size: 18px;
-	font-weight: bold;
-}
-/***** End overwritted bootstrap styles *****/
-
-/***** Buttons *****/
-.button {
-	border-radius: 5px 5px 5px 5px;
-	color: #ffffff;
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
-	padding: 5px;
-	cursor: pointer;
-}
-
-.button.red {
-	box-shadow: inset 0px 1px 0px 0px #f29c93;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
-	background: -moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
-	background-color: #fe1a00;
-	border: 1px solid #d83526;
-	text-shadow: 1px 1px 0px #b23e35;
-}
-
-.button.red:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
-	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
-	background-color:#ce0100;
-}
-
-.button.green {
-	box-shadow:inset 0px 1px 0px 0px #caefab;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811) );
-	background:-moz-linear-gradient( center top, #77d42a 5%, #5cb811 100% );
-	background-color:#77d42a;
-	border: 1px solid #268a16;
-	text-shadow:1px 1px 0px #aade7c;
-}
-
-.button.green:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
-	background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a');
-	background-color:#5cb811;
-}
-/****** End Buttons *****/
-
-/****** Tables *****/
-td, th {
-	border: 1px solid #000000;
-	padding: 5px;
-}
-/****** End Tables *****/
-
-/****** Modals *****/
-.modal .modal-body input, .modal .modal-body select {
-	margin: 15px 0 0 0;
-	width: 150px;
-}
-/****** End Modals *****/
+/***** Overwritten bootstrap styles *****/
+/***** End overwritten bootstrap styles *****/
