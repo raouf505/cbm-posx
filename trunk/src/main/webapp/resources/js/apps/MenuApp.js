@@ -10,13 +10,12 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap', 'marionette', 'menu/vie
 	});
 
 	MenuApp.on('start', function() {
-		this.menuCollection = new MenuCollection();
+		this.menuCollection = new MenuCollection(window.jsonObjects.menuItems);
 		this.menuComponentCompositeView = new MenuComponentCompositeView({
 			collection: this.menuCollection
 		});
 		
 		this.menuComponentRegion.show(this.menuComponentCompositeView);
-		this.menuCollection.fetch({reset: true});
 		
 		this.menuItemUpdateModalRegion.show(new MenuItemUpdateModalView());
 		this.menuActionBarRegion.show(new MenuActionBarView());
