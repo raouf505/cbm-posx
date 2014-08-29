@@ -37,13 +37,17 @@
 	<tiles:insertAttribute name="navigation" />
 	
 	<div class="container">
-		<div class="jumbotron">
-			<h1>${ pageContent.title }</h1>
-			<tiles:insertAttribute name="content" />
-		</div>
+		<div class="panel panel-primary">
+      		<div class="panel-heading">
+        		<h1 class="panel-title">${ pageContent.title }</h1>
+      		</div>
+      		<div class="panel-body">
+        		<tiles:insertAttribute name="content" />
+      		</div>
+    	</div>
 	</div>
 	
-<%-- 	<tiles:insertAttribute name="footer" /> --%>
+	<tiles:insertAttribute name="footer" />
 	
 </body>
 </html>
