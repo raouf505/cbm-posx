@@ -3,11 +3,11 @@ define(["jquery", "underscore", "backbone", "marionette", "menu/views/MenuItemVi
 	return Marionette.CompositeView.extend({
 		id: "menuComponent",
 		template: template,
-		itemView: MenuItemView,
-		itemViewContainer: "#menuList",
+		childView: MenuItemView,
+		childViewContainer: "#menuList",
 		emptyView: EmptyView,
 		categories: ["Entradas", "Bebidas", "Arroces", "Carnes"],
-		itemViewOptions: function(model, index) {
+		childViewOptions: function(model, index) {
 			return {
 				showByDefault: model.get("category") ==  this.categories[0]
 			};
