@@ -61,5 +61,20 @@ public class MenuItem implements Serializable {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		
+		result.append("{");
+		result.append(" id: '" + this.getId() + "',");
+		result.append(" name: '" + this.getName() + "',");
+		result.append(" category: '" + this.getCategory() + "',");
+		result.append(" price: '" + this.getPrice() + "'");
+		result.append("}");
+		
+	    return result.toString();
+    }
+	
 
 }
