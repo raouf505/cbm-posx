@@ -8,6 +8,11 @@ a, a:hover, a:active, a:focus {
   outline: 0;
 }
 
+/* Firefox fix for awkward fieldset styling involving width that interferes with the responsive table. */
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
 /***** End common styles *****/
 
 /***** Overwritten bootstrap styles *****/
