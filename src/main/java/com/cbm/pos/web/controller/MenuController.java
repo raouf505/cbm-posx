@@ -31,6 +31,7 @@ public class MenuController extends CommonController {
 	public String show(Locale locale, Model model) {
 		logger.info("Show menu request handler triggered");
 		model.addAttribute("pageContent", contentManagerService.getContent(locale.toString(), "menuPage", PageContent.class));
+		model.addAttribute("menuItems", menuItemService.listAll());
 		
 		return "menu";
 	}
