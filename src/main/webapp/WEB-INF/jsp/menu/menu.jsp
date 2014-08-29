@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/jsp/common/taglibs.jsp"  %>
 
 <script type="text/javascript">
-	window.jsonObjects.menuItems = "${ menuItems }";
+	window.jsonObjects.menuItems = ${ menuItems };
 </script>
 
 <div id="menuComponentRegion"></div>
