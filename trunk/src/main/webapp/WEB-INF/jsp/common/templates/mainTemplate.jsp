@@ -19,6 +19,7 @@
 	<tiles:useAttribute id="backboneApp" name="backboneApp" classname="java.lang.String" ignore="true"/>
 	<c:if test="${ !empty backboneApp }">
 		<script type="text/javascript">
+			window.jsonObjects = {};
 		
 			// this variable is used to implement specific functionality for current page
 			var pageName = "${ viewName }";
