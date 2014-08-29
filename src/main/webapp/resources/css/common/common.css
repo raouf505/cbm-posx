@@ -1,5 +1,9 @@
 /***** Common styles *****/
 
+body {
+	padding-top: 70px;
+}
+
 a, a:hover, a:active, a:focus {
   outline: 0;
 }

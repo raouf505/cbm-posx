@@ -35,8 +35,11 @@
 
 	<tiles:insertAttribute name="navigation" />
 	
-	<div id="pageContent">
-		<tiles:insertAttribute name="content" />
+	<div class="container">
+		<div class="jumbotron">
+			<h1>${ pageContent.title }</h1>
+			<tiles:insertAttribute name="content" />
+		</div>
 	</div>
 	
 <%-- 	<tiles:insertAttribute name="footer" /> --%>
