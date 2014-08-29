@@ -9,7 +9,7 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap', 'marionette', 'menu/vie
 		menuItemAddModaRegion: '#menuItemAddModaRegion'
 	});
 
-	MenuApp.on('initialize:after', function() {
+	MenuApp.on('start', function() {
 		this.menuCollection = new MenuCollection();
 		this.menuComponentCompositeView = new MenuComponentCompositeView({
 			collection: this.menuCollection
