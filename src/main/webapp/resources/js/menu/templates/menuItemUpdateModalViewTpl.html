@@ -5,22 +5,48 @@
 			<h4 class="modal-title">Agregar Item</h4>
 		</div>
 		<div class="modal-body">
-			<form id="updateMenuItemForm" action="#">
-				<input type="text" placeholder="Nombre" name="name" /><br />
-				<input type="text" placeholder="Precio" name="price" /><br />
-				<select name="category" title="Category">
-					<option>Entradas</option>
-					<option>Bebidas</option>
-					<option>Arroces</option>
-					<option>Carnes</option>
-				</select>
+			<form class="form-horizontal" role="form" action="/menu/menuItemMultiPartUpdate" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+			    	<label for="menuItemUpdateName" class="col-sm-2 control-label">Nombre</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="menuItemUpdateName" name="name" placeholder="Nombre">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="menuItemUpdatePrecio" class="col-sm-2 control-label">Precio</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="menuItemUpdatePrecio" name="price" placeholder="Precio">
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="menuItemUpdateDescription" class="col-sm-2 control-label">Descripcion</label>
+			    	<div class="col-sm-10">
+			      		<textarea class="form-control" rows="3" id="menuItemUpdateDescription" name="description"></textarea>
+			    	</div>
+			  	</div>
+			  	<div class="form-group">
+			  		<label for="menuItemUpdateCategory" class="col-sm-2 control-label">Categoria</label>
+			  		<div class="col-sm-10">
+					  	<select class="form-control" id="menuItemUpdateCategory" name="category" title="Categoria">
+							<option>Entradas</option>
+							<option>Bebidas</option>
+							<option>Arroces</option>
+							<option>Carnes</option>
+						</select>
+					</div>
+				</div>
+			  	<div class="form-group">
+			    	<label for="menuItemUpdateFileImg" class="col-sm-2 control-label">Imagen</label>
+			    	<div class="col-sm-10">
+			    		<input type="file" id="menuItemUpdateFileImg" name="img">
+			    	</div>
+			  	</div>
 			</form>
-			<p id="updateMenuItemModalErrorMsg" class="text-danger"></p>
 		</div>
 		<div class="modal-footer">
+			<button type="button" class="btn btn-success updateMenuItemBtn">Guardar</button>
+			<button type="button" class="btn btn-danger deleteMenuItemBtn" data-dismiss="modal">Eliminar</button>
 			<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-			<button type="button" id="updateMenuItemBtn" class="btn btn-success">Guardar</button>
-			<button type="button" id="deleteMenuItemBtn" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
 		</div>
 	</div>
 </div>

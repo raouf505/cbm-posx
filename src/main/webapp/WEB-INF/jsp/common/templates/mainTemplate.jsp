@@ -11,8 +11,6 @@
 	<!-- End Styles -->
 	
 	<!-- Javascript -->
-	<!-- common functionality across all pages -->
-	<script src="/resources/js/common.js"></script>
 	
 	<!-- Load the script "/resources/js/main.js" as our entry point if "backboneApp" comes from tile configuration -->
 	<!-- creates "backboneApp" global variable in order to include specific app on main.js -->

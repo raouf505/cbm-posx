@@ -3,6 +3,7 @@ require.config({
 	paths: {
 		backbone: "lib/backbone-min",
 		bootstrap: "lib/bootstrap.min",
+		common: "common",
 		jquery: "lib/jquery-2.1.1.min",
 		marionette: "lib/backbone.marionette.min",
 		text: "lib/text",
@@ -34,6 +35,6 @@ require.config({
 
 // this includes an specific "app" defined on mainTemplate.jsp defined as "backboneApp".
 // "backboneApp" value is defined on tiles definition
-require(["apps/" + backboneApp], function(App){
+require(["apps/" + backboneApp, "common"], function(App){
 	App.start();
 });
